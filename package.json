@@ -1,0 +1,51 @@
+{
+  "name": "portfolioreact",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/aos": "^3.0.4",
+    "@types/node": "^16.18.71",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "aos": "^2.3.4",
+    "axios": "^1.4.0",
+    "framer-motion": "10.12.17",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.10.1",
+    "react-responsive": "^10.0.0",
+    "react-scripts": "5.0.1",
+    "react-spring": "^9.7.3",
+    "styled-components": "^6.1.8",
+    "tailwindcss": "^3.3.2",
+    "three": "0.153.0",
+    "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "dev": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/three": "0.152.1"
+  }
+}

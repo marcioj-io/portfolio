@@ -1,0 +1,17 @@
+@media (max-width: 767px) {
+  .earth-small {
+    --earth-size: 1;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .earth-medium {
+    --earth-size: 1.8;
+  }
+}
+
+@media (min-width: 1025px) {
+  .earth-large {
+    --earth-size: 3;
+  }
+}
