@@ -17,7 +17,7 @@ export interface ProjetosProps {
 function SectionProjects({ projetos }: ProjetosProps) {
 
   return (
-    <div className="flex flex-col items-center w-screen h-auto pt-64 pb-8 mt-44 gap-20 ">
+    <div className="flex flex-col items-center w-screen h-auto pt-64 pb-8 mt-44 gap-20 bg-gradient-to-b from-[#0d1117] to-[#0e382a]">
 
       <section className="flex flex-col w-[94.5vw] gap-8 lg:gap-16 ">
         {projetos.slice(0, 3).map((projeto, index) => (
