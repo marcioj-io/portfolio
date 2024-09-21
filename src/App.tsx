@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './globals.css';
 import HomeHero from './components/HomeHero/HomeHero';
 import Xp from './components/Xp/Xp'
-import SectionProjects from './components/projects/SectionProjects';
 
 import netflixPng from './assets/netlifx.png';
 import SportsPng from './assets/E-sports.png';
@@ -10,6 +9,8 @@ import SpacetimePng from './assets/Spacetime.png';
 
 import Aos from 'aos'
 import 'aos/dist/aos.css'
+import NavBar from './components/NavBar/NavBar';
+import SectionProjects from './components/projects/SectionProjects';
 
 function App() {
   const projectsArray = [
@@ -72,15 +73,16 @@ function App() {
 
   return (
     <div className='flex flex-col w-screen h-screen'>
-      <section >
+      <NavBar />
+      <section>
         <HomeHero />
       </section>
       <section>
         <Xp />
       </section>
-      {/* <section >
+      <section>
         <SectionProjects projetos={projects} />
-      </section> */}
+      </section>
     </div>
   );
 }

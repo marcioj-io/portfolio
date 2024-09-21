@@ -1,59 +1,45 @@
-import { AiOutlineRightCircle } from 'react-icons/ai'
-import React from 'react'
+import { AiOutlineRightCircle } from 'react-icons/ai';
+import React from 'react';
 
 interface ProjetoProps {
-  title: string
-  type: string
-  slug: string
-  img: string
-  z?: string
+  title: string;
+  type: string;
+  slug: string;
+  img: string;
+  z?: string;
 }
 
-function ProjectItem({ title, type, slug, img, z }: ProjetoProps) {
-  const bgImageUrl = `url(${img})`
-
+function ProjectItem({ title, type, slug, img }: ProjetoProps) {
   return (
-    <div
-      data-aos="fade-up"
-      data-aos-duration="500"
-      className={`flex flex-col items-start w-full h-full  even:flex-row lg:even:flex-row-reverse bg-[#0d1117] z-${z}`}
-    >
-      <section
-        className='relative h-[50vh] w-[50vw]'
-        style={{
-          backgroundImage: bgImageUrl,
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          position: 'relative',
-          borderRadius: 5
-        }}
-      >
-        <div
-          id="overlay"
-          className="absolute w-screen h-screen opacity-75 transition: 0.5s hover:opacity-[0.4]"
-        />
-        <div
-          id="text"
-          className="left-4 top-4 lg:absolute w-fit lg:top-12 lg:-right-40 transition:0.5s"
-        >
-          <h1 className="text-4xl"># {title}</h1>
-          <h2 className="text-3xl font-light ">- {type}</h2>
-        </div>
-      </section>
+    <div className="flex xs:flex-col md:flex-row w-full h-full items-center even:lg:flex-row-reverse xs:gap-6 md:gap-20 bg-[#0d1117]">
 
-      <button
-        type="button"
-        className="h-16 margin:0 0 3rem 5rem bg-none border-none"
-      >
-        <a
-          href={`/projetos/${slug}`}
-          className="color-[#fff] text-4xl font-light flex items-center gap-3 transition: 0.5s"
-        >
-          Ver mais <AiOutlineRightCircle />
-        </a>
-      </button>
+      {/* Imagem */}
+      <div className="xs:w-[80%] xs:h-[20vh] md:w-[50vw] md:h-[50vh] bg-cover bg-center rounded-md"
+        style={{ backgroundImage: `url(${img})` }}
+      />
+
+      {/* Texto e Botão */}
+      <div className="flex xs:absolute xs:w-[80vw] md:w-auto md:relative xs:pt-2 md:p-0 md:flex-col h-80 justify-between">
+        <div>
+          <h1 className="text-white text-base md:text-4xl font-light">
+            {title}
+          </h1>
+          <h2 className="text-white text-xs md:text-lg font-light">
+            {type}
+          </h2>
+        </div>
+
+        <button type="button">
+          <a href={`/projetos/${slug}`}
+            className="text-white text-base md:text-4xl font-light flex items-center gap-3 transition duration-500"
+          >
+            Ver mais <AiOutlineRightCircle />
+          </a>
+        </button>
+      </div>
+
     </div>
-  )
+  );
 }
-export default ProjectItem
+
+export default ProjectItem;
