@@ -36,16 +36,16 @@ function HomeHero() {
   };
 
   return (
-    <div id='home-hero' className='h-screen w-screen xs:max-sm:h-[50vh] bg-violet-500'>
+    <div id='home-hero' className='h-screen w-screen xs:max-sm:h-[50vh] '>
       <div className='grid xs:max-sm:grid-cols-1 md:grid-cols-2 h-full w-full'>
-        <div id='apresentation' className='flex flex-col w-full xs:max-sm:min-h-20 sm:h-full xs:max-sm:justify-center justify-center xs:items-center bg-red-500 overflow-x-hidden'>
+        <div id='apresentation' className='flex flex-col w-full xs:max-sm:min-h-20 sm:h-full xs:max-sm:justify-center justify-center xs:items-center  overflow-x-hidden'>
           <div className="flex xs:w-[270px] sm:w-[440px]">
             <p className='text-slate-50 text-4xl xs:max-sm:text-2xl'>
               {text}
             </p>
           </div>
         </div>
-        <div id='earthAventure' className='flex h-full xs:max-sm:flex-1 xs:max-sm:items-start xs:max-sm:pt-9 bg-green-500 '>
+        <div id='earthAventure' className='flex h-full xs:max-sm:flex-1 xs:max-sm:items-start xs:max-sm:pt-9  '>
           <EarthAventure />
           <div className='h-500 w-50 xs:w-[100px] xs:h-[100px] lg:w-[300px] lg:h-[300px] xs:left-[55%] xs:top-[35%] lg:left-[75%] lg:top-[50%] ' style={shadowStyle}></div>
         </div>

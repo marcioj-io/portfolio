@@ -57,7 +57,7 @@ function Xp() {
   };
 
   return (
-    <div className="h-[10vh] w-screen flex xs:flex-col xs:m-auto xs:items-center md:items-start md:justify-start md:pl-5 lg:pl-10 bg-yellow-300">
+    <div className="h-auto w-screen flex xs:flex-col xs:m-auto xs:items-center md:items-start md:justify-start md:pl-5 lg:pl-10 ">
       <div className='md:py-16'>
         <p className='text-custom-rgb text-co md:text-6xl relative xs:max-sm:right-14 md:px-5 md:pb-12 xs:py-5'>
           <span className='font-bold font-sans'>
