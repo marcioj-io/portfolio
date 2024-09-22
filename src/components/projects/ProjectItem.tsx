@@ -13,7 +13,7 @@ function ProjectItem({ title, type, slug, img, index }: ProjetoProps) {
   const isEven = index % 2 === 0;
 
   return (
-    <div className={`flex xs:flex-col md:flex-row w-full h-full items-center ${!isEven ? 'lg:flex-row-reverse' : ''} xs:gap-6 md:gap-20 bg-transparent`}>
+    <div className={`flex xs:flex-col md:flex-row w-full h-full items-center ${!isEven ? 'lg:flex-row-reverse' : ''} xs:gap-6 md:gap-16 md:mt-12 bg-transparent`}>
 
       {/* Imagem com overlay de opacidade controlado por hover e transição de 3 segundos */}
       <div className="relative xs:w-[90vw] md:w-[50vw] xs:h-[20vh] md:h-[50vh] bg-cover bg-center rounded-md"

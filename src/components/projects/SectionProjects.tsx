@@ -23,7 +23,7 @@ function SectionProjects({ projetos }: ProjetosProps) {
           #Projects
         </span>
       </p>
-      <div className="flex flex-col items-center w-full h-auto pb-8 gap-20 ">
+      <div className="flex flex-col items-center w-full h-auto pb-8">
         <section className="flex flex-col w-[94.5vw] gap-8 lg:gap-16 ">
           {projetos.slice(0, 3).map((projeto, index) => (
             <ProjectItem
