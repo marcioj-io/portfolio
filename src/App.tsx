@@ -1,6 +1,7 @@
 import './globals.css';
 import HomeHero from './components/HomeHero/HomeHero';
 import Xp from './components/Xp/Xp'
+import { Toaster } from 'react-hot-toast';
 
 import netflixPng from './assets/netlifx.png';
 import SportsPng from './assets/E-sports.png';
@@ -11,6 +12,8 @@ import 'aos/dist/aos.css'
 import NavBar from './components/NavBar/NavBar';
 import SectionProjects from './components/projects/SectionProjects';
 import Conhecimentos from './components/Conhecimentos/Conhecimentos';
+import FormContato from './components/FormContato';
+import { useEffect } from 'react';
 
 function App() {
   const projectsArray = [
@@ -71,6 +74,11 @@ function App() {
     thumbnail: projeto.data.thumbnail.url,
   }))
 
+
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
+
   return (
     <div className='flex flex-col w-screen h-screen'>
       <NavBar />
@@ -86,6 +94,10 @@ function App() {
       <section>
         <Conhecimentos />
       </section>
+      <section>
+        <FormContato />
+      </section>
+      <Toaster />
     </div>
   );
 }

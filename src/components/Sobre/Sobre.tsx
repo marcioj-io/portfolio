@@ -30,9 +30,9 @@ function Sobre() {
                             <span className="block md:hidden">{shortText}</span>
                         </p>
 
-                        <div className='flex w-full xs:pt-6 items-center justify-between '>
+                        <div className='flex w-full xs:pt-6 items-center justify-between md:justify-end'>
                             <a href={`/about`}
-                                className="text-[#f5efef] text-base md:text-lg md:font-mono font-bold flex items-center gap-3 transition duration-500 cursor-pointer"
+                                className="text-[#f5efef] md:hidden text-base md:text-lg md:font-mono font-bold flex items-center gap-3 transition duration-500 cursor-pointer"
                             >
                                 Ver mais <AiOutlineRightCircle className='mt-[5px]' />
                             </a>
