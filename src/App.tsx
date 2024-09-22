@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import './globals.css';
 import HomeHero from './components/HomeHero/HomeHero';
 import Xp from './components/Xp/Xp'
@@ -11,6 +10,7 @@ import Aos from 'aos'
 import 'aos/dist/aos.css'
 import NavBar from './components/NavBar/NavBar';
 import SectionProjects from './components/projects/SectionProjects';
+import Conhecimentos from './components/Conhecimentos/Conhecimentos';
 
 function App() {
   const projectsArray = [
@@ -82,6 +82,9 @@ function App() {
       </section>
       <section>
         <SectionProjects projetos={projects} />
+      </section>
+      <section>
+        <Conhecimentos />
       </section>
     </div>
   );
