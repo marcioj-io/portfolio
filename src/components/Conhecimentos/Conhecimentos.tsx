@@ -22,7 +22,7 @@ function Conhecimentos() {
   // const isExtraLargeScreen = useMediaQuery({ query: '(min-width: 1025px)' });
 
   return (
-    <div className="flex flex-col h-screen w-screen px-3 bg-[#0e382a] gap-14">
+    <div className="flex flex-col h-auto w-screen px-3 bg-[#0e382a] gap-6 xs:py-10 ">
       <p className="text-[#c0c0c0] md:text-6xl font-bold font-sans relative pl-10 py-6 md:py-20 gap-8 ">
         <span>#Skills</span>
       </p>

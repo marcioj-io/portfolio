@@ -23,7 +23,7 @@ function ProjectItem({ title, type, slug, img, index }: ProjetoProps) {
       </div>
 
       {/* Texto e Botão */}
-      <div className="flex xs:absolute xs:w-[80vw] md:flex-col md:w-auto md:relative xs:pt-2 md:p-0 h-80 justify-between">
+      <div className="flex xs:absolute xs:w-[80vw] md:flex-col md:w-auto md:relative xs:pt-2 md:p-0 h-64 justify-between">
         {/* Ajuste a posição da div do título de forma condicional com base no índice */}
         <div className={`md:relative ${!isEven ? 'md:left-44' : 'md:right-44'}`}>
           <h1 className="text-[#C0C0C0] text-base md:text-4xl font-bold">
