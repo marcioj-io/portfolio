@@ -19,7 +19,7 @@ function Sobre() {
     Na interface do usuário, sou proficientemente versado em React, combinado com Typescript, explorando...`;
 
     return (
-        <div className="flex flex-col h-full w-full">
+        <div className="flex flex-col h-full w-full xs:my-10">
             <div className="relative flex xs:justify-center xs:max-sm:top-8 md:left-36">
                 {open && (
                     <div className="absolute xs:bg-[#161b22] md:bg-[#14533f] flex flex-col xs:w-[350px] md:w-[850px] rounded-lg z-20 xs:top-20 md:right-[16.8rem] md:top-60 xs:px-5 xs:pb-4 h-auto items-center">
