@@ -3,6 +3,8 @@ import Robot from '../../assets/rob.png';
 import HeroImage from '../../assets/eu.jpg';
 import { motion } from 'framer-motion';
 import { AiOutlineRightCircle } from 'react-icons/ai';
+import { MdRemoveCircleOutline } from "react-icons/md";
+
 
 function Sobre() {
     const [open, setOpen] = useState(false);
@@ -22,25 +24,35 @@ function Sobre() {
         <div className="flex flex-col h-full w-full xs:my-10">
             <div className="relative flex xs:justify-center xs:max-sm:top-8 md:left-36">
                 {open && (
-                    <div className="absolute xs:bg-[#161b22] md:bg-[#14533f] flex flex-col xs:w-[350px] md:w-[850px] rounded-lg z-20 xs:top-20 md:right-[16.8rem] md:top-60 xs:px-5 xs:pb-4 h-auto items-center">
-                        <div className="bg-cover bg-no-repeat xs:h-20 xs:w-20 xs:mt-8 md:h-32 md:w-32 rounded-full mb-4" style={{ backgroundImage: `url(${HeroImage})` }} />
+                    <div className="absolute xs:bg-[#161b22] md:bg-[#14533f] flex flex-col xs:w-full md:w-[850px] rounded-lg z-20 xs:top-[6rem] md:right-[16.8rem] md:top-60 xs:px-5 xs:pb-4 h-auto items-center">
+                        <div
+                            className="bg-cover bg-no-repeat xs:h-20 xs:w-20 xs:mt-8 md:h-32 md:w-32 rounded-full mb-4"
+                            style={{ backgroundImage: `url(${HeroImage})` }} />
 
-                        <p className="text-slate-100 font-mono">
+
+                        <a className="relative left-[9rem] bottom-24 text-green-500 hover:text-green-500 transition duration-500 cursor-pointer font-bold sm:hidden"
+                            onClick={() => setOpen(false)}
+                        >
+                            <MdRemoveCircleOutline className='xs:mt-[1px] mt-[5px]'
+                                size={30} />
+                        </a>
+
+                        <p className="text-[#ded9d9] font-mono">
                             <span className="hidden md:block">{fullText}</span>
                             <span className="block md:hidden">{shortText}</span>
                         </p>
 
-                        <div className='flex w-full xs:pt-6 items-center justify-between md:justify-end'>
+                        <div className='flex w-full xs:pb-2 xs:pt-10 xs:px-4 items-center justify-between md:justify-end'>
                             <a href={`/about`}
-                                className="text-[#f5efef] md:hidden text-base md:text-lg md:font-mono font-bold flex items-center gap-3 transition duration-500 cursor-pointer"
+                                className="text-[#ded9d9] md:hidden text-base md:text-lg md:font-mono  flex items-center gap-3 transition duration-500 cursor-pointer"
                             >
-                                Ver mais <AiOutlineRightCircle className='mt-[5px]' />
+                                Ver mais <AiOutlineRightCircle className='xs:mt-[1px] mt-[5px' />
                             </a>
 
-                            <a className="text-[#f5efef] text-base md:text-lg font-mono flex items-center gap-3 transition duration-500 cursor-pointer"
+                            <a className="text-[#ded9d9] text-base md:text-lg font-mono flex items-center gap-3 transition duration-500 cursor-pointer "
                                 onClick={() => setOpen(false)}
                             >
-                                Fechar <AiOutlineRightCircle className='mt-[5px]' />
+                                Fechar <AiOutlineRightCircle className='xs:mt-[1px] md:mt-[5px]' />
                             </a>
                         </div>
                     </div>

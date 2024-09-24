@@ -11,7 +11,7 @@ function XpItem({ }) {
   return (
     <div className='flex items-start justify-center xs:w-full lg:w-[30vw] xs:h-full p-4 rounded-lg bg-transparent'
     >
-      <div className="h-full w-[5vw] mr-3">
+      <div className="h-full xs:w-[15vw] md:w-[5vw] mr-3">
         <img src={verzel} />
       </div>
       <div className=" flex flex-col w-full h-full">

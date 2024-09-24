@@ -62,9 +62,9 @@ function Xp() {
   return (
     <div className="h-auto w-screen flex xs:flex-col xs:m-auto xs:items-center md:items-start md:justify-start md:pl-5 lg:pl-10 xs:mt-20">
       <div className='md:py-16'>
-        <p className='text-[#c0c0c0] text-co md:text-6xl relative xs:max-sm:right-14 md:px-5 md:pb-12 xs:py-5'>
-          <span className='font-bold font-sans'>#03 Years</span>
-          {<br />} <span className='text-[#8ac6d1]'>of professional experience</span>
+        <p className='text-[#c0c0c0] md:text-6xl relative xs:max-sm:right-14 md:px-5 md:pb-12 xs:py-5'>
+          <span className='font-bold font-sans xs:text-xl md:text-6xl'>#03 Years</span>
+          {<br />} <span className='text-[#8ac6d1] xs:text-xl md:text-5xl'>of professional experience</span>
         </p>
       </div>
 

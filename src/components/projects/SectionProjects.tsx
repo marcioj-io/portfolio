@@ -18,7 +18,7 @@ function SectionProjects({ projetos }: ProjetosProps) {
 
   return (
     <div className="flex flex-col w-screen lg:min-h-screen pt-10 lg:pt-20 h-auto bg-gradient-to-b from-[#0d1117] to-[#0e382a] ">
-      <p className='text-[#c0c0c0] md:text-6xl relative xs:pl-14 xs:py-6 md:py-20'>
+      <p className='text-[#c0c0c0] xs:text-xl md:text-6xl relative xs:pl-10 xs:py-10  md:py-20'>
         <span className='font-bold font-sans'>
           #Projects
         </span>

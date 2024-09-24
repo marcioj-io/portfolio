@@ -22,12 +22,12 @@ function Conhecimentos() {
   // const isExtraLargeScreen = useMediaQuery({ query: '(min-width: 1025px)' });
 
   return (
-    <div className="flex flex-col h-auto w-screen px-3 bg-[#0e382a] gap-6 xs:py-10 ">
-      <p className="text-[#c0c0c0] md:text-6xl font-bold font-sans relative pl-10 py-6 md:py-20 gap-8 ">
+    <div className="flex flex-col h-auto w-screen bg-[#0e382a] gap-2 xs:py-4 xs:pb-12 ">
+      <p className="text-[#c0c0c0] xs:text-xl md:text-6xl font-bold font-sans relative pl-10 py-6 md:py-20 gap-8 ">
         <span>#Skills</span>
       </p>
 
-      <section className="flex flex-wrap justify-center gap-14 mt-8">
+      <section className="flex flex-wrap justify-center gap-14 mt-8 px-3">
         <ConhecimentoItem title="Csharp" icon={<TbBrandCSharp className='contactIcon' size={100} />} />
         <ConhecimentoItem title=".NET" icon={<DiDotnet className='contactIcon' size={100} />} />
         <ConhecimentoItem title="Javascript" icon={<IoLogoJavascript className='contactIcon' size={100} />} />
@@ -39,7 +39,7 @@ function Conhecimentos() {
         {!isSmallScreen ? <ConhecimentoItem title="jest" icon={<SiJest className='contactIcon' size={100} />} /> : <></>}
       </section>
 
-      {!isSmallScreen ? <section className="flex flex-wrap justify-center gap-8 mt-8">
+      {!isSmallScreen ? <section className="flex flex-wrap justify-center gap-8 mt-8 px-3">
         <ConhecimentoItem title="React" icon={<FaReact className='contactIcon' size={100} />} />
         <ConhecimentoItem title="Next" icon={<TbBrandNextjs className='contactIcon' size={100} />} />
         <ConhecimentoItem title="Zod" icon={<TbDiamondFilled className='contactIcon' size={100} />} />

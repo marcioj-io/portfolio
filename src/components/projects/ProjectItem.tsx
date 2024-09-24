@@ -16,7 +16,7 @@ function ProjectItem({ title, type, slug, img, index }: ProjetoProps) {
     <div className={`flex xs:flex-col md:flex-row w-full h-full items-center ${!isEven ? 'lg:flex-row-reverse' : ''} xs:gap-6 md:gap-16 md:mt-12 bg-transparent`}>
 
       {/* Imagem com overlay de opacidade controlado por hover e transição de 3 segundos */}
-      <div className="relative xs:w-[90vw] md:w-[50vw] xs:h-[20vh] md:h-[50vh] bg-cover bg-center rounded-md"
+      <div className="relative xs:w-[90vw] md:w-[50vw] xs:h-[22vh] md:h-[50vh] bg-cover bg-center rounded-md"
         style={{ backgroundImage: `url(${img})` }}>
         {/* Overlay com opacidade padrão que desaparece no hover */}
         <div className="absolute inset-0 bg-[#1f1e1f] opacity-70 hover:opacity-0 transition-opacity duration-[1s] rounded-md"></div>
