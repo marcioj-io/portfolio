@@ -3,9 +3,19 @@ import EarthAventure from './EarthComponent/EarthAventure';
 
 function HomeHero() {
   const [text, setText] = useState('');
+  const [isPortuguese, setIsPortuguese] = useState(false);
 
   useEffect(() => {
-    const helloText = `Hello, I am Marcio junior, Developer Full Stack`;
+    // Detectando a linguagem do navegador
+    const userLang = navigator.language || navigator.languages[0];
+    if (userLang === 'pt-BR') {
+      setIsPortuguese(true);
+    }
+
+    const helloTextEN = `Hello, I am Marcio Junior, Developer Full Stack`;
+    const helloTextPT = `Olá, eu sou Marcio Junior, Desenvolvedor Full Stack`;
+
+    const helloText = isPortuguese ? helloTextPT : helloTextEN;
     let index = 0;
 
     const animateText = () => {
@@ -15,7 +25,7 @@ function HomeHero() {
         clearInterval(timer);
         setTimeout(() => {
           index = 0;
-          timer = setInterval(animateText, 200);
+          timer = setInterval(animateText, 100);
         }, 1000);
       }
     };
@@ -25,13 +35,13 @@ function HomeHero() {
     return () => {
       clearInterval(timer);
     };
-  }, []);
+  }, [isPortuguese]);
 
   const shadowStyle: CSSProperties = {
     position: 'absolute' as 'absolute',
     transform: 'translate(-50%, -50%)',
     borderRadius: '50%',
-    boxShadow: '0 0 500px 60px rgba(30, 58, 138, 1.5)', // Default shadow
+    boxShadow: '0 0 500px 60px rgba(30, 58, 138, 1.5)', // Sombra padrão
     zIndex: -1,
   };
 
@@ -42,8 +52,8 @@ function HomeHero() {
         <div id='apresentation'
           className='flex xs:min-h-[100px] sm:h-full w-full overflow-x-hidden justify-center items-center xs:mb-12 md:mb-0'
         >
-          <div className="flex items-center justify-center xs:h-[100px] xs:w-[270px] sm:w-[440px] " >
-            <p className='text-slate-50 text-4xl xs:max-sm:text-2xl '>
+          <div className="flex items-center justify-center xs:h-[100px] xs:w-[270px] sm:w-[440px]">
+            <p className='text-slate-50 text-4xl xs:max-sm:text-2xl'>
               {text}
             </p>
           </div>

@@ -40,7 +40,6 @@ function App() {
         type: 'Personal Academic Development',
         description: 'project developed during another NLW by rocketseat, the objective of the application is to be a timeline storing the best moments of our careers developed in next13, tailwindcss, typescript, OAuth authentication from github, zod for validations etc...',
         link: {
-
           url: 'https://github.com/marciojuniors2/NlwSpacetime',
         },
         thumbnail: {

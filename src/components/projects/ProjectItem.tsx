@@ -35,7 +35,7 @@ function ProjectItem({ title, type, slug, img, index }: ProjetoProps) {
         </div>
 
         <button type="button">
-          <a href={`/projetos/${slug}`}
+          <a href={`${slug}`}
             className="text-[#C0C0C0] text-base md:text-4xl font-bold flex items-center gap-3 transition duration-500"
           >
             Ver mais <AiOutlineRightCircle />

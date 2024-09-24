@@ -38,7 +38,7 @@ export const Form = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className=" w-[88vw] grid grid-cols-1 sm:grid-cols-2 gap-4"
+      className=" w-[92vw] grid grid-cols-1 sm:grid-cols-2 gap-4"
     >
       <input
         placeholder="Nome"
@@ -63,7 +63,7 @@ export const Form = () => {
         disabled={isSubmitting}
         className="bg-[#574529] text-gray-100 py-3 px-6 text-lg font-sans rounded-lg transition-opacity hover:opacity-90 disabled:opacity-50 sm:w- md:w-72"
       >
-        Enviar mensagem
+        Send message
       </button>
     </form>
   );

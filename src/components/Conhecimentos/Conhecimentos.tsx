@@ -23,7 +23,7 @@ function Conhecimentos() {
 
   return (
     <div className="flex flex-col h-auto w-screen bg-[#0e382a] gap-2 xs:py-4 xs:pb-12 ">
-      <p className="text-[#c0c0c0] xs:text-xl md:text-6xl font-bold font-sans relative pl-10 py-6 md:py-20 gap-8 ">
+      <p className="text-[#c0c0c0] xs:text-xl md:text-6xl font-bold font-sans relative xs:pl-10 md:pl-16 py-6 md:py-20 gap-8 ">
         <span>#Skills</span>
       </p>
 

@@ -13,12 +13,11 @@ function Sobre() {
         setOpen(!open);
     };
 
-    const fullText = `Em 2021, concluí minha especialização como Desenvolvedor Full Stack no Instituto Proa - Senac, onde meu alto desempenho me proporcionou uma bolsa para a formação subsequente na Alura Cursos em parceria com a Oracle. Atualmente, estou ativo como Desenvolvedor Full Stack, dominando diversas tecnologias. No backend, minha expertise reside em .NET Core, fazendo uso de bibliotecas relevantes dentro da linguagem, como AutoMapper, Entity Framework, entre outras. Assim como o Node.js, tenho experiência com o Nest.js, que nos proporciona um ambiente de testes implementado (Jest), juntamente com outras bibliotecas relevantes.
-    Na interface do usuário, sou proficientemente versado em React, combinado com Typescript, explorando todas as potencialidades do React Hooks e da Context API, em conjunto com outras bibliotecas e frameworks de destaque.
-    Nos momentos de folga, dedico-me a projetos pessoais onde coloco em prática algumas das tecnologias mais valorizadas no mercado, tais como Prisma, Node, .NET, React, Mui, Chakra, Formik, Yup, Styled-Components e Tailwind.CSS, entre outras ferramentas de controle e desenvolvimento. Essa familiaridade e experiência me permitem utilizá-las com confiança e eficiência.`;
+    const fullText = `In 2021, I completed my specialization as a Full Stack Developer at Instituto Proa - Senac, where my high performance earned me a scholarship for subsequent training at Alura Cursos in partnership with Oracle. I am currently active as a Full Stack Developer, mastering several technologies. On the backend, my expertise lies in .NET Core, making use of relevant libraries within the language, such as AutoMapper, Entity Framework, among others. As well as Node.js, I have experience with Nest.js, which provides us with an implemented testing environment (Jest), along with other relevant libraries.
+In the user interface, I am proficient in React, combined with Typescript, exploring all the potential of React Hooks and Context API, together with other prominent libraries and frameworks. In my spare time, I dedicate myself to personal projects where I put into practice some of the most valued technologies on the market, such as Prisma, Node, .NET, React, Mui, Chakra, Formik, Yup, Styled-Components and Tailwind.CSS, among other control and development tools. This familiarity and experience allow me to use them with confidence and efficiency.`;
 
-    const shortText = `Em 2021, concluí minha especialização como Desenvolvedor Full Stack no Instituto Proa - Senac, onde meu alto desempenho me proporcionou uma bolsa para a formação subsequente na Alura Cursos em parceria com a Oracle. Atualmente, estou ativo como Desenvolvedor Full Stack, dominando diversas tecnologias. No backend, minha expertise reside em .NET Core, fazendo uso de bibliotecas relevantes dentro da linguagem, como AutoMapper, Entity Framework, entre outras. Assim como o Node.js, tenho experiência com o Nest.js, que nos proporciona um ambiente de testes implementado (Jest), juntamente com outras bibliotecas relevantes.
-    Na interface do usuário, sou proficientemente versado em React, combinado com Typescript, explorando...`;
+    const shortText = `In 2021, I completed my specialization as a Full Stack Developer at Instituto Proa - Senac, where my high performance earned me a scholarship for subsequent training at Alura Cursos in partnership with Oracle. I am currently active as a Full Stack Developer, mastering several technologies. On the backend, my expertise lies in .NET Core, making use of relevant libraries within the language, such as AutoMapper, Entity Framework, among others. As well as Node.js, I have experience with Nest.js, which provides us with an implemented testing environment (Jest), along with other relevant libraries.
+On the user interface, I am proficient in React, combined with Typescript, exploring...`;
 
     return (
         <div className="flex flex-col h-full w-full xs:my-10">
@@ -46,13 +45,13 @@ function Sobre() {
                             <a href={`/about`}
                                 className="text-[#ded9d9] md:hidden text-base md:text-lg md:font-mono  flex items-center gap-3 transition duration-500 cursor-pointer"
                             >
-                                Ver mais <AiOutlineRightCircle className='xs:mt-[1px] mt-[5px' />
+                                See more <AiOutlineRightCircle className='xs:mt-[1px] ' />
                             </a>
 
                             <a className="text-[#ded9d9] text-base md:text-lg font-mono flex items-center gap-3 transition duration-500 cursor-pointer "
                                 onClick={() => setOpen(false)}
                             >
-                                Fechar <AiOutlineRightCircle className='xs:mt-[1px] md:mt-[5px]' />
+                                Closed <AiOutlineRightCircle className='xs:mt-[1px]' />
                             </a>
                         </div>
                     </div>

@@ -1,8 +1,14 @@
 import React, { CSSProperties, useState, useRef } from 'react';
-import XpItem from './XpItem';
+import XpItem, { ExperienciaProps } from './XpItem';
 import Sobre from '../Sobre/Sobre';
 import { useMediaQuery } from 'react-responsive';
 import ZoomIcon from '../../assets/zoom.png';
+
+// business
+import verzel from '../../assets/verzel.jpg';
+import nextc from '../../assets/nextcooders.jpg';
+import koode from '../../assets/koode.jpg';
+
 
 function Xp() {
   const [lightPosition, setLightPosition] = useState({ x: 0, y: 0 });
@@ -59,6 +65,33 @@ function Xp() {
     cursor: `url(${ZoomIcon}) ${cursorOffsetX} ${cursorOffsetY}, auto`,
   };
 
+  const Xp: ExperienciaProps[] = [
+    {
+      icon: verzel,
+      title: 'Full-Stack Developer',
+      empresa: 'Verzel Soluções em Sistemas',
+      time: 'Set de 2023 - Set 2024',
+      local: 'São Paulo, Brasil - Remota',
+      description: 'Skills: Web technologies - React Native - Azure DevOps - Node.js - #react.ts - Microsoft Azure - C# - .NET Core - EntityFramework -Linq - Sql Server - Postgress - PrismaOrm - Docker - Nodemailer - Mailkit etc..'
+    },
+    {
+      icon: nextc,
+      title: 'Full-Stack Developer',
+      empresa: 'NextCooders',
+      time: 'Set de 2022 - Setember 2023',
+      local: 'São Paulo, Brasil - Remote',
+      description: 'Skills: Web technologies - Azure DevOps - Node.js - #react.ts - Microsoft Azure - .NET Core - EntityFramework - Linq'
+    },
+    {
+      icon: koode,
+      title: 'Full-Stack Developer',
+      empresa: 'Koode',
+      time: 'Feb de 2022 - Setember 2022',
+      local: 'São Paulo, Brasil - Remote',
+      description: 'Skills: Web technologies - Azure DevOps - Node.js - #react.ts - Microsoft Azure - .NET Core - AspNet'
+    },
+  ]
+
   return (
     <div className="h-auto w-screen flex xs:flex-col xs:m-auto xs:items-center md:items-start md:justify-start md:pl-5 lg:pl-10 xs:mt-20">
       <div className='md:py-16'>
@@ -80,8 +113,7 @@ function Xp() {
           <div style={lightStyle}></div>
 
           <div className="grid xs:max-sm:grid-cols-1 md:grid-cols-2 h-full xs:max-sm:w-full xs:gap-6 sm:gap-2 p-2">
-            <XpItem />
-            <XpItem />
+            <XpItem projects={Xp} />
           </div>
         </div>
         <div className=''>
