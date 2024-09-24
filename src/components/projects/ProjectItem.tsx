@@ -1,59 +1,49 @@
-import { AiOutlineRightCircle } from 'react-icons/ai'
-import React from 'react'
+import { AiOutlineRightCircle } from 'react-icons/ai';
+import React from 'react';
 
 interface ProjetoProps {
-  title: string
-  type: string
-  slug: string
-  img: string
-  z?: string
+  title: string;
+  type: string;
+  slug: string;
+  img: string;
+  index: number; // Recebe o índice do item
 }
 
-function ProjectItem({ title, type, slug, img, z }: ProjetoProps) {
-  const bgImageUrl = `url(${img})`
+function ProjectItem({ title, type, slug, img, index }: ProjetoProps) {
+  const isEven = index % 2 === 0;
 
   return (
-    <div
-      data-aos="fade-up"
-      data-aos-duration="500"
-      className={`flex flex-col items-start w-full h-full  even:flex-row lg:even:flex-row-reverse bg-[#0d1117] z-${z}`}
-    >
-      <section
-        className='relative h-[50vh] w-[50vw]'
-        style={{
-          backgroundImage: bgImageUrl,
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          position: 'relative',
-          borderRadius: 5
-        }}
-      >
-        <div
-          id="overlay"
-          className="absolute w-screen h-screen opacity-75 transition: 0.5s hover:opacity-[0.4]"
-        />
-        <div
-          id="text"
-          className="left-4 top-4 lg:absolute w-fit lg:top-12 lg:-right-40 transition:0.5s"
-        >
-          <h1 className="text-4xl"># {title}</h1>
-          <h2 className="text-3xl font-light ">- {type}</h2>
-        </div>
-      </section>
+    <div className={`flex xs:flex-col md:flex-row w-full h-full items-center ${!isEven ? 'lg:flex-row-reverse' : ''} xs:gap-6 md:gap-16 md:mt-12 bg-transparent`}>
 
-      <button
-        type="button"
-        className="h-16 margin:0 0 3rem 5rem bg-none border-none"
-      >
-        <a
-          href={`/projetos/${slug}`}
-          className="color-[#fff] text-4xl font-light flex items-center gap-3 transition: 0.5s"
-        >
-          Ver mais <AiOutlineRightCircle />
-        </a>
-      </button>
+      {/* Imagem com overlay de opacidade controlado por hover e transição de 3 segundos */}
+      <div className="relative xs:w-[90vw] md:w-[50vw] xs:h-[22vh] md:h-[50vh] bg-cover bg-center rounded-md"
+        style={{ backgroundImage: `url(${img})` }}>
+        {/* Overlay com opacidade padrão que desaparece no hover */}
+        <div className="absolute inset-0 bg-[#1f1e1f] opacity-70 hover:opacity-0 transition-opacity duration-[1s] rounded-md"></div>
+      </div>
+
+      {/* Texto e Botão */}
+      <div className="flex xs:absolute xs:w-[80vw] md:flex-col md:w-auto md:relative xs:pt-2 md:p-0 h-64 justify-between">
+        {/* Ajuste a posição da div do título de forma condicional com base no índice */}
+        <div className={`md:relative ${!isEven ? 'md:left-44' : 'md:right-44'}`}>
+          <h1 className="text-[#C0C0C0] text-base md:text-4xl font-bold">
+            {title}
+          </h1>
+          <h2 className="text-[#C0C0C0] text-xs md:text-lg font-bold">
+            {type}
+          </h2>
+        </div>
+
+        <button type="button">
+          <a href={`${slug}`}
+            className="text-[#C0C0C0] text-base md:text-4xl font-bold flex items-center gap-3 transition duration-500"
+          >
+            Ver mais <AiOutlineRightCircle />
+          </a>
+        </button>
+      </div>
     </div>
-  )
+  );
 }
-export default ProjectItem
+
+export default ProjectItem;

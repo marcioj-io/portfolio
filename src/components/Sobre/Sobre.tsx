@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import Robot from '../../assets/rob.png';
 import HeroImage from '../../assets/eu.jpg';
 import { motion } from 'framer-motion';
+import { AiOutlineRightCircle } from 'react-icons/ai';
+import { MdRemoveCircleOutline } from "react-icons/md";
+
 
 function Sobre() {
     const [open, setOpen] = useState(false);
@@ -10,17 +13,47 @@ function Sobre() {
         setOpen(!open);
     };
 
+    const fullText = `In 2021, I completed my specialization as a Full Stack Developer at Instituto Proa - Senac, where my high performance earned me a scholarship for subsequent training at Alura Cursos in partnership with Oracle. I am currently active as a Full Stack Developer, mastering several technologies. On the backend, my expertise lies in .NET Core, making use of relevant libraries within the language, such as AutoMapper, Entity Framework, among others. As well as Node.js, I have experience with Nest.js, which provides us with an implemented testing environment (Jest), along with other relevant libraries.
+In the user interface, I am proficient in React, combined with Typescript, exploring all the potential of React Hooks and Context API, together with other prominent libraries and frameworks. In my spare time, I dedicate myself to personal projects where I put into practice some of the most valued technologies on the market, such as Prisma, Node, .NET, React, Mui, Chakra, Formik, Yup, Styled-Components and Tailwind.CSS, among other control and development tools. This familiarity and experience allow me to use them with confidence and efficiency.`;
+
+    const shortText = `In 2021, I completed my specialization as a Full Stack Developer at Instituto Proa - Senac, where my high performance earned me a scholarship for subsequent training at Alura Cursos in partnership with Oracle. I am currently active as a Full Stack Developer, mastering several technologies. On the backend, my expertise lies in .NET Core, making use of relevant libraries within the language, such as AutoMapper, Entity Framework, among others. As well as Node.js, I have experience with Nest.js, which provides us with an implemented testing environment (Jest), along with other relevant libraries.
+On the user interface, I am proficient in React, combined with Typescript, exploring...`;
+
     return (
-        <div className="flex flex-col h-full w-full">
+        <div className="flex flex-col h-full w-full xs:my-10">
             <div className="relative flex xs:justify-center xs:max-sm:top-8 md:left-36">
                 {open && (
-                    <div className="bg-[#14533f] flex flex-col xs:w-[350px] md:w-[700px] rounded-lg absolute z-20 xs:top-20 md:right-[16.8rem] md:top-60 xs:px-5 xs:pb-4 md:p-10 h-auto items-center">
-                        <div className="bg-cover bg-no-repeat h-32 w-32 rounded-full mb-4" style={{ backgroundImage: `url(${HeroImage})` }} />
-                        <p className="text-slate-100 font-mono">
-                            Em 2021, concluí minha especialização como Desenvolvedor Full Stack no Instituto Proa - Senac, onde meu alto desempenho me proporcionou uma bolsa para a formação subsequente na Alura Cursos em parceria com a Oracle. Atualmente, estou ativo como Desenvolvedor Full Stack, dominando diversas tecnologias. No backend, minha expertise reside em .NET Core, fazendo uso de bibliotecas relevantes dentro da linguagem, como AutoMapper, Entity Framework, entre outras. Assim como o Node.js, tenho experiência com o Nest.js, que nos proporciona um ambiente de testes implementado (Jest), juntamente com outras bibliotecas relevantes.
-                            Na interface do usuário, sou proficientemente versado em React, combinado com Typescript, explorando todas as potencialidades do React Hooks e da Context API, em conjunto com outras bibliotecas e frameworks de destaque.
-                            Nos momentos de folga, dedico-me a projetos pessoais onde coloco em prática algumas das tecnologias mais valorizadas no mercado, tais como Prisma, Node, .NET, React, Mui, Chakra, Formik, Yup, Styled-Components e Tailwind.CSS, entre outras ferramentas de controle e desenvolvimento. Essa familiaridade e experiência me permitem utilizá-las com confiança e eficiência.
+                    <div className="absolute xs:bg-[#161b22] md:bg-[#14533f] flex flex-col xs:w-full md:w-[850px] rounded-lg z-20 xs:top-[6rem] md:right-[16.8rem] md:top-60 xs:px-5 xs:pb-4 h-auto items-center">
+                        <div
+                            className="bg-cover bg-no-repeat xs:h-20 xs:w-20 xs:mt-8 md:h-32 md:w-32 rounded-full mb-4"
+                            style={{ backgroundImage: `url(${HeroImage})` }} />
+
+
+                        <a className="relative left-[9rem] bottom-24 text-green-500 hover:text-green-500 transition duration-500 cursor-pointer font-bold sm:hidden"
+                            onClick={() => setOpen(false)}
+                        >
+                            <MdRemoveCircleOutline className='xs:mt-[1px] mt-[5px]'
+                                size={30} />
+                        </a>
+
+                        <p className="text-[#ded9d9] font-mono">
+                            <span className="hidden md:block">{fullText}</span>
+                            <span className="block md:hidden">{shortText}</span>
                         </p>
+
+                        <div className='flex w-full xs:pb-2 xs:pt-10 xs:px-4 items-center justify-between md:justify-end'>
+                            <a href={`/about`}
+                                className="text-[#ded9d9] md:hidden text-base md:text-lg md:font-mono  flex items-center gap-3 transition duration-500 cursor-pointer"
+                            >
+                                See more <AiOutlineRightCircle className='xs:mt-[1px] ' />
+                            </a>
+
+                            <a className="text-[#ded9d9] text-base md:text-lg font-mono flex items-center gap-3 transition duration-500 cursor-pointer "
+                                onClick={() => setOpen(false)}
+                            >
+                                Closed <AiOutlineRightCircle className='xs:mt-[1px]' />
+                            </a>
+                        </div>
                     </div>
                 )}
                 <motion.div
@@ -34,7 +67,10 @@ function Sobre() {
                 >
                     {!open && (
                         <div className="bg-[#14533f] flex xs:max-sm:w-32 w-36 z-20 rounded-lg items-center justify-center absolute xs:right-[8rem] xs:top-16 md:right-[16rem] md:top-56 p-2">
-                            <p className="text-slate-100 font-mono xs:max-sm:text-sm">Click here to learn more</p>
+                            <p className="text-slate-100 font-mono xs:max-sm:text-sm"
+                                onClick={() => setOpen(true)}
+                            >
+                                Click here to learn more</p>
                         </div>
                     )}
                     <img
