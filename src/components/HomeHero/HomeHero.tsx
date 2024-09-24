@@ -20,7 +20,7 @@ function HomeHero() {
       }
     };
 
-    let timer = setInterval(animateText, 200);
+    let timer = setInterval(animateText, 100);
 
     return () => {
       clearInterval(timer);
