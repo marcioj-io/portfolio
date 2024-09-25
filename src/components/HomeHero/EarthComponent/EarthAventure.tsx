@@ -5,7 +5,7 @@ import Earth from './Earth';
 
 function EarthAventure() {
     return (
-        <div className='flex xs:h-auto sm:w-full h-full w-full items-center justify-center xs:pt-16 md:pt-0 '>
+        <div className='flex h-full w-full items-center justify-center'>
             <div className='absolute'>
                 <Earth />
             </div>
