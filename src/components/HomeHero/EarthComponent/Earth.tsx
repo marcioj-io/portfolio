@@ -52,9 +52,15 @@ const Earth = () => {
 
     // Função para atualizar o tamanho da tela e ajustar a câmera
     const handleResize = () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
+      if (containerRef.current) {
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+        renderer.setSize(width, height);
+        containerRef.current.style.width = `${width}px`;
+        containerRef.current.style.height = `${height}px`;
+      }
     };
 
     // Aplica debounce no redimensionamento para melhorar a performance
@@ -70,8 +76,10 @@ const Earth = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="earth-container" />
-
+    <div
+      ref={containerRef}
+      className="earth-container"
+    />
   );
 };
 

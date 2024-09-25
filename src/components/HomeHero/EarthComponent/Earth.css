@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden; /* Adicione esta linha para evitar o redimensionamento */
 }
 
 @media (max-width: 767px) {
