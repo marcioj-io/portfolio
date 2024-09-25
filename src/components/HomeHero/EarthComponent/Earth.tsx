@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 import earthTexture from '../../../assets/earth.png';
-import './Earth.css'; // Crie um arquivo Earth.css no mesmo diretório
+import './Earth.css';
 
 // Função debounce para evitar múltiplas execuções do redimensionamento
 function debounce(func: (...args: any[]) => void, wait: number) {
@@ -16,63 +16,85 @@ const Earth = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Inicializando o renderizador e a cena
+    // Criação do renderer
     const renderer = new THREE.WebGLRenderer({ alpha: true });
-    renderer.setPixelRatio(window.devicePixelRatio); // Ajusta o ratio de pixels para melhorar a performance em mobile
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(document.documentElement.clientWidth, document.documentElement.clientHeight);
+    renderer.domElement.style.display = 'block'; // Remove qualquer margin default
 
+    // Anexa o canvas gerado pelo Three.js ao containerRef
     if (containerRef.current) {
-      containerRef.current.innerHTML = '';
+      containerRef.current.innerHTML = ''; // Limpa o container antes de adicionar o novo canvas
       containerRef.current.appendChild(renderer.domElement);
     }
 
+    // Cena e câmera
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.z = 10;
+    const camera = new THREE.PerspectiveCamera(50, document.documentElement.clientWidth / document.documentElement.clientHeight, 0.1, 1000);
 
-    const earthSize = parseFloat(getComputedStyle(containerRef.current!).getPropertyValue('--earth-size'));
+    // Posiciona a câmera mais distante e ajusta conforme o tamanho da tela
+    const distanceFromEarth = 10;
+    camera.position.set(0, 0, distanceFromEarth); // Centraliza a câmera
+
+    // Tamanho da Terra com base na propriedade CSS
+    const earthSize = parseFloat(getComputedStyle(containerRef.current!).getPropertyValue('--earth-size')) || 1.5;
     const geometry = new THREE.SphereGeometry(earthSize, 64, 64);
+
+    // Carrega a textura
     const textureLoader = new THREE.TextureLoader();
-    const texture = textureLoader.load(earthTexture as string);
+    const texture = textureLoader.load(earthTexture as string, (texture) => {
+      texture.minFilter = THREE.LinearFilter;
+      texture.needsUpdate = true;
+    }, undefined, (error) => {
+      console.error('Erro ao carregar a textura:', error);
+    });
+
+    // Aplica a textura ao material da Terra
     const material = new THREE.MeshStandardMaterial({ map: texture });
     const earth = new THREE.Mesh(geometry, material);
 
+    // Centraliza a Terra na cena
+    earth.position.set(0, 0, 0);
     scene.add(earth);
 
+    // Adiciona iluminação
     const light = new THREE.DirectionalLight(0xffffff, 1);
     light.position.set(1, 1, 1);
     scene.add(light);
 
-    // Função de renderização
-    const rendererRender = () => {
-      requestAnimationFrame(rendererRender);
-      earth.rotation.y += 0.001; // Velocidade de rotação
+    // Função de renderização da cena
+    const renderScene = () => {
+      earth.rotation.y += 0.001; // Rotação contínua
       renderer.render(scene, camera);
+      requestAnimationFrame(renderScene); // Chama renderScene continuamente
     };
 
-    // Função para atualizar o tamanho da tela e ajustar a câmera
+    // Função de redimensionamento da tela
     const handleResize = () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
+      const width = document.documentElement.clientWidth;
+      const height = document.documentElement.clientHeight;
+
+      camera.aspect = width / height;
       camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setSize(width, height);
     };
 
-    // Aplica debounce no redimensionamento para melhorar a performance
     const debouncedResize = debounce(handleResize, 100);
-
     window.addEventListener('resize', debouncedResize);
 
-    rendererRender(); // Inicia a renderização
+    renderScene(); // Chama a renderização inicial
 
+    // Limpa os eventos e animação ao desmontar o componente
     return () => {
       window.removeEventListener('resize', debouncedResize);
+      renderer.dispose(); // Limpa o renderizador
     };
   }, []);
 
   return (
     <div
       ref={containerRef}
-      className="earth-small earth-medium earth-large"
+      className="earth-container earth-small earth-medium earth-large"
     />
   );
 };

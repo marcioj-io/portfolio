@@ -1,3 +1,12 @@
+.earth-container {
+  width: 100vw; /* 100% da largura da viewport */
+  height: 100vh; /* 100% da altura da viewport */
+  position: relative;
+  overflow: hidden;
+}
+
+
+
 @media (max-width: 767px) {
   .earth-small {
     --earth-size: 1.5;
