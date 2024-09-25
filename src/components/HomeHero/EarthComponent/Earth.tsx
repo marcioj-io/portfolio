@@ -16,13 +16,12 @@ const Earth = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Inicializando o renderizador e a cena
     const renderer = new THREE.WebGLRenderer({ alpha: true });
-    renderer.setPixelRatio(window.devicePixelRatio); // Ajusta o ratio de pixels para melhorar a performance em mobile
+    renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
 
     if (containerRef.current) {
-      containerRef.current.innerHTML = '';
+      containerRef.current.innerHTML = ''; // Limpa o container
       containerRef.current.appendChild(renderer.domElement);
     }
 
@@ -30,7 +29,11 @@ const Earth = () => {
     const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.z = 10;
 
-    const earthSize = parseFloat(getComputedStyle(containerRef.current!).getPropertyValue('--earth-size'));
+    // Acessa a variável CSS --earth-size para ajustar o tamanho da Terra
+    const computedStyles = getComputedStyle(containerRef.current!);
+    const earthSize = parseFloat(computedStyles.getPropertyValue('--earth-size'));
+
+    // Define o tamanho da Terra usando o valor da variável CSS
     const geometry = new THREE.SphereGeometry(earthSize, 64, 64);
     const textureLoader = new THREE.TextureLoader();
     const texture = textureLoader.load(earthTexture as string);
@@ -43,23 +46,19 @@ const Earth = () => {
     light.position.set(1, 1, 1);
     scene.add(light);
 
-    // Função de renderização
     const rendererRender = () => {
       requestAnimationFrame(rendererRender);
       earth.rotation.y += 0.001; // Velocidade de rotação
       renderer.render(scene, camera);
     };
 
-    // Função para atualizar o tamanho da tela e ajustar a câmera
     const handleResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
     };
 
-    // Aplica debounce no redimensionamento para melhorar a performance
     const debouncedResize = debounce(handleResize, 100);
-
     window.addEventListener('resize', debouncedResize);
 
     rendererRender(); // Inicia a renderização
@@ -69,9 +68,7 @@ const Earth = () => {
     };
   }, []);
 
-  return (
-    <div ref={containerRef} className="earth-container" />
-  );
+  return <div ref={containerRef} className="earth-container" />;
 };
 
 export default Earth;

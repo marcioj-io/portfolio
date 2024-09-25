@@ -25,12 +25,12 @@ function HomeHero() {
         clearInterval(timer);
         setTimeout(() => {
           index = 0;
-          timer = setInterval(animateText, 100);
+          timer = setInterval(animateText, 90);
         }, 1000);
       }
     };
 
-    let timer = setInterval(animateText, 100);
+    let timer = setInterval(animateText, 90);
 
     return () => {
       clearInterval(timer);
@@ -41,33 +41,31 @@ function HomeHero() {
     position: 'absolute' as 'absolute',
     transform: 'translate(-50%, -50%)',
     borderRadius: '50%',
-    // boxShadow: '0 0 500px 60px rgba(30, 58, 138, 1.5)', // Sombra padrão
     zIndex: -1,
   };
 
   return (
-    <div id='home-hero' className='xs:h-auto sm:h-screen w-screen xs:pt-16 md:pt-0'>
-      <div className='grid xs:max-sm:grid-cols-1 md:grid-cols-2 h-full w-full'>
-
-        <div id='apresentation'
-          className=' flex xs:min-h-[100px] h-full w-full overflow-x-hidden justify-center items-center xs:mb-12 md:mb-0'
-        >
-          <div className="flex items-center justify-center xs:h-[100px] xs:w-[290px] sm:w-[440px]">
-            <p className='text-slate-50 text-4xl xs:max-sm:text-2xl'>
-              {text}
-            </p>
-          </div>
-        </div>
-
-        <div id='earthAventure' className='xs:min-h-[45vh] sm:h-full xs:max-sm:flex-1 '>
-          <EarthAventure />
-          <div
-            className='w-50 xs:w-[100px] xs:h-[100px] lg:w-[300px] lg:h-[300px] xs:left-[47%] xs:top-[50%] lg:left-[75%] lg:top-[50%]
-            xs:shadow-[0_0_500px_80px_rgba(30,58,138,1.5)] lg:shadow-[0_0_500px_150px_rgba(30,58,138,1.5)]'
-            style={shadowStyle}
-          ></div>
-        </div>
+    <div className='flex xs:flex-col md:flex-row xs:h-[80vh] md:h-screen w-screen xs:pt-10 md:pt-0'>
+      <div
+        id='apresentation'
+        className='flex xs:w-full xs:h-[30vh] md:w-[50vw] md:h-full items-center justify-center overflow-x-hidden'
+      >
+        <p className='text-slate-50 xs:text-2xl md:text-4xl xs:w-[300px] md:w-[450px]'>{text}</p>
       </div>
+
+      {/* Caso modificado o tamanho do globo, corresponder ao height da div abaixo */}
+      <div
+        id="earthAventure"
+        className="flex xs:w-full xs:h-[50vh] md:w-[50vw] md:h-full "
+      >
+        <EarthAventure />
+        <div
+          className="w-50 xs:w-[100px] xs:h-[100px] lg:w-[300px] lg:h-[300px] xs:left-[47%] xs:top-[50%] lg:left-[75%] lg:top-[50%]
+    xs:shadow-[0_0_500px_120px_rgba(30,58,138,1.5)] lg:shadow-[0_0_500px_150px_rgba(30,58,138,1.5)]"
+          style={shadowStyle}
+        ></div>
+      </div>
+
     </div>
   );
 }

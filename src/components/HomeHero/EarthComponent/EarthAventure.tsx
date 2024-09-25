@@ -5,12 +5,12 @@ import Earth from './Earth';
 
 function EarthAventure() {
     return (
-        <div className='flex h-full w-full items-center justify-center'>
-            <div className='absolute'>
+        <div className='flex w-full h-full items-center justify-center'>
+            <div>
                 <Earth />
             </div>
 
-            <div className='w-1/2 xs:w-1/3 md:w-1/4 lg:w-72'>
+            <div className='w-1/2 xs:w-1/3 md:w-1/4 lg:w-72 absolute'>
                 <motion.div
                     style={{ background: 'transparent' }}
                     animate={{ y: [-10, 10, -10] }}
