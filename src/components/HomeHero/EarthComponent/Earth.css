@@ -1,26 +1,28 @@
 .earth-container {
-  width: 100vw; /* 100% da largura da viewport */
-  height: 100vh; /* 100% da altura da viewport */
-  position: relative;
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-
 @media (max-width: 767px) {
-  .earth-small {
+  .earth-container {
     --earth-size: 1.5;
+    height: 50vh; /* Ajuste a altura para manter o tamanho fixo em telas menores */
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  .earth-medium {
+  .earth-container {
     --earth-size: 1.8;
+    height: 60vh; /* Ajuste adequado para tablets */
   }
 }
 
 @media (min-width: 1025px) {
-  .earth-large {
+  .earth-container {
     --earth-size: 3;
+    height: 70vh; /* Ajuste para desktops */
   }
 }

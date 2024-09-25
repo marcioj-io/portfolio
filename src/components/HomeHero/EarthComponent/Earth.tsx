@@ -70,10 +70,8 @@ const Earth = () => {
   }, []);
 
   return (
-    <div
-      ref={containerRef}
-      className="earth-small earth-medium earth-large"
-    />
+    <div ref={containerRef} className="earth-container" />
+
   );
 };
 
