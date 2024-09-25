@@ -18,7 +18,10 @@ const Earth = () => {
   useEffect(() => {
     const renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    const width = containerRef.current?.clientWidth || window.innerWidth;
+    const height = containerRef.current?.clientHeight || window.innerHeight;
+    renderer.setSize(width, height);
 
     if (containerRef.current) {
       containerRef.current.innerHTML = ''; // Limpa o container
@@ -26,14 +29,12 @@ const Earth = () => {
     }
 
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 1000);
     camera.position.z = 10;
 
-    // Acessa a variável CSS --earth-size para ajustar o tamanho da Terra
     const computedStyles = getComputedStyle(containerRef.current!);
     const earthSize = parseFloat(computedStyles.getPropertyValue('--earth-size'));
 
-    // Define o tamanho da Terra usando o valor da variável CSS
     const geometry = new THREE.SphereGeometry(earthSize, 64, 64);
     const textureLoader = new THREE.TextureLoader();
     const texture = textureLoader.load(earthTexture as string);
@@ -53,9 +54,12 @@ const Earth = () => {
     };
 
     const handleResize = () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
+      const newWidth = containerRef.current?.clientWidth || window.innerWidth;
+      const newHeight = containerRef.current?.clientHeight || window.innerHeight;
+
+      camera.aspect = newWidth / newHeight;
       camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setSize(newWidth, newHeight);
     };
 
     const debouncedResize = debounce(handleResize, 100);
@@ -67,6 +71,7 @@ const Earth = () => {
       window.removeEventListener('resize', debouncedResize);
     };
   }, []);
+
 
   return <div ref={containerRef} className="earth-container" />;
 };

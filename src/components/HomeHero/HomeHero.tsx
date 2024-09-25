@@ -48,24 +48,22 @@ function HomeHero() {
     <div className='flex xs:flex-col md:flex-row xs:h-[80vh] md:h-screen w-screen xs:pt-10 md:pt-0'>
       <div
         id='apresentation'
-        className='flex xs:w-full xs:h-[30vh] md:w-[50vw] md:h-full items-center justify-center overflow-x-hidden'
+        className='flex xs:w-full xs:h-[30vh] md:w-[50vw] md:h-full items-center justify-center md:justify-center overflow-x-hidden'
       >
-        <p className='text-slate-50 xs:text-2xl md:text-4xl xs:w-[300px] md:w-[450px]'>{text}</p>
+        <p className='text-slate-50 xs:text-left md:text-center xs:text-2xl md:text-4xl xs:w-[300px] md:w-[450px]'>{text}</p>
       </div>
 
-      {/* Caso modificado o tamanho do globo, corresponder ao height da div abaixo */}
       <div
         id="earthAventure"
-        className="flex xs:w-full xs:h-[50vh] md:w-[50vw] md:h-full "
+        className="flex xs:w-full xs:h-[50vh] md:w-[50vw] md:h-full items-center justify-center relative"
       >
         <EarthAventure />
         <div
-          className="w-50 xs:w-[100px] xs:h-[100px] lg:w-[300px] lg:h-[300px] xs:left-[47%] xs:top-[50%] lg:left-[75%] lg:top-[50%]
-    xs:shadow-[0_0_500px_120px_rgba(30,58,138,1.5)] lg:shadow-[0_0_500px_150px_rgba(30,58,138,1.5)]"
+          className="absolute w-50 xs:w-[150px] xs:h-[150px] lg:w-[300px] lg:h-[300px] xs:left-[50%] xs:top-[50%] lg:left-[75%] lg:top-[50%]
+            xs:shadow-[0_0_150px_90px_rgba(30,58,138,0.8)] lg:shadow-[0_0_500px_150px_rgba(30,58,138,1.5)]"
           style={shadowStyle}
         ></div>
       </div>
-
     </div>
   );
 }

@@ -3,14 +3,16 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  position: relative; /* Adiciona um comportamento mais previsível ao layout */
+  width: 100%;
+  height: 100%; /* Ajuste para que a altura seja totalmente responsiva */
 }
 
 /* Tamanho da Terra em dispositivos menores */
 @media (max-width: 767px) {
   .earth-container {
-    --earth-size: 1.5;
-    width: 100%;
-    height: 50vh; /* Certifique-se de que a altura seja proporcional */
+    --earth-size: 3;
+    height: 50vh; /* Mantém o tamanho fixo em 50% da altura da viewport */
   }
 }
 
@@ -18,8 +20,8 @@
 @media (min-width: 768px) and (max-width: 1024px) {
   .earth-container {
     --earth-size: 1.8;
-    width: 50vw;
     height: 100vh;
+    width: 50vw;
   }
 }
 
@@ -27,6 +29,7 @@
 @media (min-width: 1025px) {
   .earth-container {
     --earth-size: 3;
+    height: 100vh; /* Garante que o componente ocupe toda a altura da viewport */
     width: 50vw;
   }
 }
