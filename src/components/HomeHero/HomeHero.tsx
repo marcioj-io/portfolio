@@ -62,7 +62,7 @@ function HomeHero() {
         <div id='earthAventure' className='xs:min-h-[45vh] sm:h-full xs:max-sm:flex-1 '>
           <EarthAventure />
           <div
-            className='w-50 xs:w-[100px] xs:h-[100px] lg:w-[300px] lg:h-[300px] xs:left-[47%] xs:top-[45%] lg:left-[75%] lg:top-[50%]
+            className='w-50 xs:w-[100px] xs:h-[100px] lg:w-[300px] lg:h-[300px] xs:left-[47%] xs:top-[50%] lg:left-[75%] lg:top-[50%]
             xs:shadow-[0_0_500px_80px_rgba(30,58,138,1.5)] lg:shadow-[0_0_500px_150px_rgba(30,58,138,1.5)]'
             style={shadowStyle}
           ></div>
