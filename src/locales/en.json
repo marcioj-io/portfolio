@@ -1,0 +1,14 @@
+{
+    "home": {
+        "languages": "Select your language here:",
+        "hello": "Hello, I am Marcio Junior, Developer Full Stack"
+    },
+    "about": {
+        "fullText": "In 2021, I completed my specialization as a Full Stack Developer at Instituto Proa - Senac, where my high performance earned me a scholarship for subsequent training at Alura Courses in partnership with Oracle. I currently work as a Full Stack Developer, mastering various technologies. In the backend, my specialty is .NET Core, utilizing relevant libraries within the language, such as AutoMapper, Entity Framework, among others. Additionally, I have experience with Node.js and Nest.js, which provides us with an implemented testing environment (Jest), along with other relevant libraries. In the user interface, I am proficient in React, combined with TypeScript, exploring the full potential of React Hooks and the Context API, along with other notable libraries and frameworks. In my spare time, I dedicate myself to personal projects where I put into practice some of the most valued technologies in the market, such as Prisma, Node, .NET, React, Mui, Chakra, Formik, Yup, Styled-Components, and Tailwind.CSS, among other control and development tools. This familiarity and experience allow me to use them confidently and efficiently.",
+        "shortText": "In 2021, I completed my specialization as a Full Stack Developer at Instituto Proa - Senac, where my high performance earned me a scholarship for subsequent training at Alura Courses in partnership with Oracle. I currently work as a Full Stack Developer, mastering various technologies. In the backend, my specialty is .NET Core, utilizing relevant libraries within the language, such as AutoMapper, Entity Framework, among others. Additionally, I have experience with Node.js and Nest.js, which provides us with an implemented testing environment (Jest)...",
+        "learnMore": "Click here to learn more",
+        "seeMore": "See more",
+        "close": "Close",
+        "robotAltText": "Robot image"
+    }
+}

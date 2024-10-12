@@ -1,22 +1,21 @@
 import React, { CSSProperties, useEffect, useState } from 'react';
 import EarthAventure from './EarthComponent/EarthAventure';
 import { AiOutlineSound } from 'react-icons/ai'; // Ícone de som
+import br from '../../assets/brasil.png';
+import us from '../../assets/eua.png';
+import es from '../../assets/espanha.png';
+import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../../context/hook/UseLanguage';
 
 function HomeHero() {
   const [text, setText] = useState('');
   const [isPortuguese, setIsPortuguese] = useState(false);
+  const { t } = useTranslation();
+  const { changeLanguage } = useLanguage();
 
   useEffect(() => {
-    // Detectando a linguagem do navegador
-    const userLang = navigator.language || navigator.languages[0];
-    if (userLang === 'pt-BR') {
-      setIsPortuguese(true);
-    }
+    const helloText = t('home.hello');
 
-    const helloTextEN = `Hello, I am Marcio Junior, Developer Full Stack`;
-    const helloTextPT = `Olá, eu sou Marcio Junior, Desenvolvedor Full Stack`;
-
-    const helloText = isPortuguese ? helloTextPT : helloTextEN;
     let index = 0;
 
     const animateText = () => {
@@ -36,7 +35,7 @@ function HomeHero() {
     return () => {
       clearInterval(timer);
     };
-  }, [isPortuguese]);
+  }, [isPortuguese, t]);
 
   const shadowStyle: CSSProperties = {
     position: 'absolute' as 'absolute',
@@ -57,16 +56,46 @@ function HomeHero() {
     <div className='flex xs:flex-col md:flex-row xs:h-[80vh] md:h-screen w-screen xs:pt-10 md:pt-0'>
       <div
         id='apresentation'
-        className='flex xs:w-full xs:h-[30vh] md:w-[50vw] md:h-full items-center justify-center overflow-x-hidden'
+        className='flex flex-col xs:w-full xs:h-[30vh] md:w-[50vw] md:h-full items-center justify-start overflow-x-hidden'
       >
-        <p className='text-slate-50 xs:text-left xs:text-2xl md:text-4xl xs:w-[300px] md:w-[450px]'>{text}</p>
-        {/* Corrigido o onClick para chamar a função corretamente */}
-        <AiOutlineSound
-          color='#FFFF'
-          size={30}
-          className='-rotate-45 cursor-pointer'
-          onClick={handleAudio} // Aqui a função é chamada corretamente
-        />
+        <div className='flex flex-col items-center justify-center md:w-[32vw] h-[40%] gap-8 '>
+          <h2 className='text-white font-mono text-base'
+          >{t('home.languages')}</h2>
+
+          <div className='flex gap-12 '>
+            <button className='flex flex-col gap-2'
+              onClick={() => changeLanguage('pt')}
+            >
+              <img src={br} width={30} />
+              <span className='text-slate-50 font-mono'>Pt-Br</span>
+            </button>
+
+            <button className='flex flex-col gap-2'
+              onClick={() => changeLanguage('en')}
+            >
+              <img src={us} width={30} />
+              <span className='text-slate-50 font-mono'>En-Us</span>
+            </button>
+
+            <button className='flex flex-col gap-2'
+              onClick={() => changeLanguage('es')}
+            >
+              <img src={es} width={30} />
+              <span className='text-slate-50 font-mono'>Es-Es</span>
+            </button>
+          </div>
+        </div>
+
+        <div className='flex h-[60%] md:mt-16'>
+          <p className='text-slate-50 xs:text-left xs:text-2xl md:text-4xl xs:w-[300px] md:w-[450px]'>{text}</p>
+          {/* Corrigido o onClick para chamar a função corretamente */}
+          <AiOutlineSound
+            color='#FFFF'
+            size={30}
+            className='-rotate-45 cursor-pointer'
+            onClick={handleAudio} // Aqui a função é chamada corretamente
+          />
+        </div>
       </div>
 
       <div

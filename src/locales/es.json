@@ -1,0 +1,14 @@
+{
+    "home": {
+        "languages": "Seleccione aquí el idioma deseado:",
+        "hello": "Hola, soy Marcio Junior, desarrollador Full Stack"
+    },
+    "about": {
+        "fullText": "En 2021 completé mi especialización como Full Stack Developer en el Instituto Proa - Senac, donde mi alto desempeño me valió una beca para posterior formación en Alura Cursos en alianza con Oracle. Actualmente trabajo como Desarrollador Full Stack, dominando varias tecnologías. En el backend, mi especialidad es .NET Core, utilizando librerías relevantes dentro del lenguaje, como AutoMapper, Entity Framework, entre otras. Además, tengo experiencia con Node.js y Nest.js, lo que nos ofrece un entorno de pruebas implementado (Jest), junto con otras librerías relevantes. En la interfaz de usuario, domino React, combinado con Typecript, explorando todo el potencial de React Hooks y Context API, junto con otras bibliotecas y marcos destacados. En mi tiempo libre me dedico a proyectos personales donde pongo en práctica algunas de las tecnologías más valoradas del mercado, como Prisma, Node, .NET, React, Mui, Chakra, Formik, Yup, Styled-Components y Tailwind. .CSS, entre otras. Esta familiaridad y experiencia me permite utilizarlos con confianza y eficiencia.",
+        "shortText": "In 2021, I completed my specialization as a Full Stack Developer at Instituto Proa - Senac, where my high performance earned me a scholarship for subsequent training at Alura Courses in partnership with Oracle. I currently work as a Full Stack Developer, mastering various technologies. In the backend, my specialty is .NET Core, utilizing relevant libraries within the language, such as AutoMapper, Entity Framework, among others. Additionally, I have experience with Node.js and Nest.js, which provides us with an implemented testing environment (Jest)...",
+        "learnMore": "Click here to learn more",
+        "seeMore": "See more",
+        "close": "Close",
+        "robotAltText": "Robot image"
+    }
+}
