@@ -15,7 +15,7 @@ function XpItem({ projects }: XpItemProps) {
   return (
     <>
       {projects.map((p, index) => (
-        <div key={index} className='flex items-start justify-center xs:w-full lg:w-[30vw] xs:h-full p-4 rounded-lg bg-transparent'>
+        <div key={index} className='flex items-start justify-center xs:w-full xs:h-full lg:w-[30vw] p-4 rounded-lg bg-transparent'>
           <div className="h-full xs:w-[15vw] md:w-[5vw] mr-3">
             <img src={p.icon} alt={`Ícone da empresa ${p.empresa}`} />
           </div>

@@ -4,20 +4,22 @@ import HeroImage from '../../assets/eu.jpg';
 import { motion } from 'framer-motion';
 import { AiOutlineRightCircle } from 'react-icons/ai';
 import { MdRemoveCircleOutline } from "react-icons/md";
-
+import { useTranslation } from 'react-i18next';
 
 function Sobre() {
+    const { t } = useTranslation();
+
     const [open, setOpen] = useState(false);
 
     const handleOpenModal = () => {
         setOpen(!open);
     };
 
-    const fullText = `In 2021, I completed my specialization as a Full Stack Developer at Instituto Proa - Senac, where my high performance earned me a scholarship for subsequent training at Alura Cursos in partnership with Oracle. I am currently active as a Full Stack Developer, mastering several technologies. On the backend, my expertise lies in .NET Core, making use of relevant libraries within the language, such as AutoMapper, Entity Framework, among others. As well as Node.js, I have experience with Nest.js, which provides us with an implemented testing environment (Jest), along with other relevant libraries.
-In the user interface, I am proficient in React, combined with Typescript, exploring all the potential of React Hooks and Context API, together with other prominent libraries and frameworks. In my spare time, I dedicate myself to personal projects where I put into practice some of the most valued technologies on the market, such as Prisma, Node, .NET, React, Mui, Chakra, Formik, Yup, Styled-Components and Tailwind.CSS, among other control and development tools. This familiarity and experience allow me to use them with confidence and efficiency.`;
+    const fullText = t('about.fullText');
+    const shortText = t('about.shortText');
 
-    const shortText = `In 2021, I completed my specialization as a Full Stack Developer at Instituto Proa - Senac, where my high performance earned me a scholarship for subsequent training at Alura Cursos in partnership with Oracle. I am currently active as a Full Stack Developer, mastering several technologies. On the backend, my expertise lies in .NET Core, making use of relevant libraries within the language, such as AutoMapper, Entity Framework, among others. As well as Node.js, I have experience with Nest.js, which provides us with an implemented testing environment (Jest), along with other relevant libraries.
-On the user interface, I am proficient in React, combined with Typescript, exploring...`;
+    console.log(t('about.fullText'));
+
 
     return (
         <div className="flex flex-col h-full w-full xs:my-10">
@@ -28,7 +30,6 @@ On the user interface, I am proficient in React, combined with Typescript, explo
                             className="bg-cover bg-no-repeat xs:h-20 xs:w-20 xs:mt-8 md:h-32 md:w-32 rounded-full mb-4"
                             style={{ backgroundImage: `url(${HeroImage})` }} />
 
-
                         <a className="relative left-[9rem] bottom-24 text-green-500 hover:text-green-500 transition duration-500 cursor-pointer font-bold sm:hidden"
                             onClick={() => setOpen(false)}
                         >
@@ -36,7 +37,7 @@ On the user interface, I am proficient in React, combined with Typescript, explo
                                 size={30} />
                         </a>
 
-                        <p className="text-[#ded9d9] font-mono">
+                        <p className="text-[#ded9d9] font-mono md:p-4 md:mt-4">
                             <span className="hidden md:block">{fullText}</span>
                             <span className="block md:hidden">{shortText}</span>
                         </p>
@@ -45,13 +46,13 @@ On the user interface, I am proficient in React, combined with Typescript, explo
                             <a href={`/about`}
                                 className="text-[#ded9d9] md:hidden text-base md:text-lg md:font-mono  flex items-center gap-3 transition duration-500 cursor-pointer"
                             >
-                                See more <AiOutlineRightCircle className='xs:mt-[1px] ' />
+                                {t('about.seeMore')} <AiOutlineRightCircle className='xs:mt-[1px] ' />
                             </a>
 
                             <a className="text-[#ded9d9] text-base md:text-lg font-mono flex items-center gap-3 transition duration-500 cursor-pointer "
                                 onClick={() => setOpen(false)}
                             >
-                                Closed <AiOutlineRightCircle className='xs:mt-[1px]' />
+                                {t('about.close')} <AiOutlineRightCircle className='xs:mt-[1px]' />
                             </a>
                         </div>
                     </div>
@@ -70,11 +71,11 @@ On the user interface, I am proficient in React, combined with Typescript, explo
                             <p className="text-slate-100 font-mono xs:max-sm:text-sm"
                                 onClick={() => setOpen(true)}
                             >
-                                Click here to learn more</p>
+                                {t('about.learnMore')}</p>
                         </div>
                     )}
                     <img
-                        alt="Robot"
+                        alt={t('about.robotAltText')}
                         onClick={handleOpenModal}
                         className="relative xs:h-[150px] md:h-[300px] md:w-[300px] md:top-24 md:transform md:rotate-[-30deg]"
                         src={Robot}

@@ -1,0 +1,14 @@
+{
+    "home": {
+        "languages": "Selecione a linguagem desejada aqui:",
+        "hello": "Olá, eu sou Marcio Junior, Desenvolvedor Full Stack"
+    },
+    "about": {
+        "fullText": "Em 2021, concluí minha especialização como Desenvolvedor Full Stack no Instituto Proa - Senac, onde meu alto desempenho me rendeu uma bolsa para treinamentos subsequentes na Alura Cursos em parceria com a Oracle. Atualmente, atuo como Desenvolvedor Full Stack, dominando diversas tecnologias. No backend, minha especialidade está em .NET Core, utilizando bibliotecas relevantes dentro da linguagem, como AutoMapper, Entity Framework, entre outras. Além disso, possuo experiência com Node.js e Nest.js, que nos oferece um ambiente de testes implementado (Jest), juntamente com outras bibliotecas relevantes. Na interface do usuário, sou proficiente em React, combinado com Typescript, explorando todo o potencial dos React Hooks e da Context API, junto com outras bibliotecas e frameworks de destaque. No meu tempo livre, me dedico a projetos pessoais onde coloco em prática algumas das tecnologias mais valorizadas no mercado, como Prisma, Node, .NET, React, Mui, Chakra, Formik, Yup, Styled-Components e Tailwind.CSS, entre outras ferramentas de controle e desenvolvimento. Essa familiaridade e experiência me permitem utilizá-las com confiança e eficiência.",
+        "shortText": "Em 2021, concluí minha especialização como Desenvolvedor Full Stack no Instituto Proa - Senac, onde meu alto desempenho me rendeu uma bolsa para treinamentos subsequentes na Alura Cursos em parceria com a Oracle. Atualmente, atuo como Desenvolvedor Full Stack, dominando diversas tecnologias. No backend, minha especialidade está em .NET Core, utilizando bibliotecas relevantes dentro da linguagem, como AutoMapper, Entity Framework, entre outras. Além disso, possuo experiência com Node.js e Nest.js, que nos oferece um ambiente de testes implementado (Jest)...",
+        "learnMore": "Clique aqui para saber mais",
+        "seeMore": "Ver mais",
+        "close": "Fechar",
+        "robotAltText": "Imagem do robô"
+    }
+}

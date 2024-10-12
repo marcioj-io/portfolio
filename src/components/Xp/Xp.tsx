@@ -104,7 +104,7 @@ function Xp() {
       <div className='flex xs:max-sm:flex-col md:flex-row'>
         <div
           id="costum"
-          className="bg-[#161b22] flex relative items-center justify-start xs:min-h-[450px] lg:h-[75vh] xs:w-[90vw] md:w-[70vw] lg:w-[75vw] rounded-lg overflow-hidden z-10"
+          className="bg-[#161b22] flex xs:justify-center md:items-start md:justify-start xs:max-h-[500px] xs:w-[90vw] md:w-[70vw] md:min-h-[80vh] lg:w-[75vw] rounded-lg overflow-hidden xs:pb-2 sm:pb-0 md:pt-6"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           ref={containerRef}
