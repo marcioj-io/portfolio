@@ -58,15 +58,12 @@ function HomeHero() {
         id='apresentation'
         className='flex flex-col xs:w-full xs:h-[30vh] md:w-[50vw] md:h-full items-center justify-start overflow-x-hidden'
       >
-        <div className='flex flex-col items-center justify-center md:w-[32vw] h-[40%] gap-8 '>
-          <h2 className='text-white font-mono text-base'
-          >{t('home.languages')}</h2>
-
-          <div className='flex gap-12 '>
+        <div className='flex flex-col md:justify-end md:w-full h-[40%] gap-8 xs:max-sm:mb-20'>
+          <div className='flex gap-12 md:ml-60 '>
             <button className='flex flex-col gap-2'
               onClick={() => changeLanguage('pt')}
             >
-              <img src={br} width={30} />
+              <img src={br} width={30} alt='Pt-Br' />
               <span className='text-slate-50 font-mono'>Pt-Br</span>
             </button>
 

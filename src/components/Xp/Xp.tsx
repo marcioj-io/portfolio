@@ -8,7 +8,8 @@ import ZoomIcon from '../../assets/zoom.png';
 import verzel from '../../assets/verzel.jpg';
 import nextc from '../../assets/nextcooders.jpg';
 import koode from '../../assets/koode.jpg';
-
+import { FaFilePdf } from "react-icons/fa6";
+import { FaFileWord } from "react-icons/fa6";
 
 function Xp() {
   const [lightPosition, setLightPosition] = useState({ x: 0, y: 0 });
@@ -92,19 +93,52 @@ function Xp() {
     },
   ]
 
+  const downloadPDF = () => {
+    const link = document.createElement('a');
+    link.href = '/assets/cv.pdf';
+    link.download = 'CV-MJ-Full-Stack.pdf';
+    link.click();
+  };
+
+  const downloadWord = () => {
+    const link = document.createElement('a');
+    link.href = '/assets/cv.docx';
+    link.download = 'CV-MJ-Full-Stack.docx';
+    link.click();
+  };
+
   return (
     <div className="h-auto w-screen flex xs:flex-col xs:m-auto xs:items-center md:items-start md:justify-start md:pl-5 lg:pl-10 xs:mt-20">
-      <div className='md:py-16'>
+      <div >
         <p className='text-[#c0c0c0] md:text-6xl relative xs:max-sm:right-14 md:px-5 md:pb-12 xs:py-5'>
           <span className='font-bold font-sans xs:text-xl md:text-6xl'>#03 Years</span>
           {<br />} <span className='text-[#8ac6d1] xs:text-xl md:text-5xl'>of professional experience</span>
         </p>
       </div>
 
+      <div className='relative flex xs:mt-11 xs:gap-7 md:gap-14'>
+        <span className='relative xs:left-9 md:left-[45vw] text-slate-50 font-inter font-light top-1'>Donwload Cv here: </span>
+        <FaFilePdf
+          color='#1c916c'
+          size={30}
+          className='relative xs:left-9 md:left-[45vw] mb-5 cursor-pointer'
+          onClick={downloadPDF}
+          title="Baixar PDF"
+        />
+
+        <FaFileWord
+          color='#8ac6d1'
+          size={30}
+          className='relative xs:left-9 md:left-[45vw] mb-5 cursor-pointer'
+          onClick={downloadWord}
+          title="Baixar Word"
+        />
+      </div>
+
       <div className='flex xs:max-sm:flex-col md:flex-row'>
         <div
           id="costum"
-          className="bg-[#161b22] flex xs:justify-center md:items-start md:justify-start xs:max-h-[500px] xs:w-[90vw] md:w-[70vw] md:min-h-[80vh] lg:w-[75vw] rounded-lg overflow-hidden xs:pb-2 sm:pb-0 md:pt-6"
+          className="bg-[#161b22] flex xs:justify-center md:items-center md:justify-start xs:max-h-[500px] xs:w-[90vw] md:w-[70vw] md:min-h-[80vh] lg:w-[75vw] rounded-lg overflow-hidden z-10 xs:pb-2 sm:pb-0 md:py-6"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           ref={containerRef}

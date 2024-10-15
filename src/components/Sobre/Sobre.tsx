@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import Robot from '../../assets/rob.png';
 import HeroImage from '../../assets/eu.jpg';
 import { motion } from 'framer-motion';
@@ -20,15 +20,19 @@ function Sobre() {
 
     console.log(t('about.fullText'));
 
+    const MemorizedImg = useMemo(() => (
+        <div
+            className="bg-cover bg-no-repeat xs:h-20 xs:w-20 xs:mt-8 md:h-32 md:w-32 rounded-full mb-4"
+            style={{ backgroundImage: `url(${HeroImage})` }}
+        />
+    ), [HeroImage]);
 
     return (
         <div className="flex flex-col h-full w-full xs:my-10">
             <div className="relative flex xs:justify-center xs:max-sm:top-8 md:left-36">
                 {open && (
                     <div className="absolute xs:bg-[#161b22] md:bg-[#14533f] flex flex-col xs:w-full md:w-[850px] rounded-lg z-20 xs:top-[6rem] md:right-[16.8rem] md:top-60 xs:px-5 xs:pb-4 h-auto items-center">
-                        <div
-                            className="bg-cover bg-no-repeat xs:h-20 xs:w-20 xs:mt-8 md:h-32 md:w-32 rounded-full mb-4"
-                            style={{ backgroundImage: `url(${HeroImage})` }} />
+                        {MemorizedImg}
 
                         <a className="relative left-[9rem] bottom-24 text-green-500 hover:text-green-500 transition duration-500 cursor-pointer font-bold sm:hidden"
                             onClick={() => setOpen(false)}
@@ -68,7 +72,7 @@ function Sobre() {
                 >
                     {!open && (
                         <div className="bg-[#14533f] flex xs:max-sm:w-32 w-36 z-20 rounded-lg items-center justify-center absolute xs:right-[8rem] xs:top-16 md:right-[16rem] md:top-56 p-2">
-                            <p className="text-slate-100 font-mono xs:max-sm:text-sm"
+                            <p className="text-slate-100 font-inter xs:max-sm:text-sm"
                                 onClick={() => setOpen(true)}
                             >
                                 {t('about.learnMore')}</p>
