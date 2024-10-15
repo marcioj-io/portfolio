@@ -9,7 +9,6 @@ import { useLanguage } from '../../context/hook/UseLanguage';
 
 function HomeHero() {
   const [text, setText] = useState('');
-  const [isPortuguese, setIsPortuguese] = useState(false);
   const { t } = useTranslation();
   const { changeLanguage } = useLanguage();
 
@@ -17,6 +16,7 @@ function HomeHero() {
     const helloText = t('home.hello');
 
     let index = 0;
+    let timer: NodeJS.Timeout;
 
     const animateText = () => {
       setText(`${helloText.substring(0, index + 1)}...`);
@@ -30,12 +30,12 @@ function HomeHero() {
       }
     };
 
-    let timer = setInterval(animateText, 90);
+    timer = setInterval(animateText, 90);
 
     return () => {
       clearInterval(timer);
     };
-  }, [isPortuguese, t]);
+  }, [t]);
 
   const shadowStyle: CSSProperties = {
     position: 'absolute' as 'absolute',
@@ -53,12 +53,12 @@ function HomeHero() {
 
 
   return (
-    <div className='flex xs:flex-col md:flex-row xs:h-[80vh] md:h-screen w-screen xs:pt-10 md:pt-0'>
+    <div className='flex xs:flex-col md:flex-row xs:h-[100vh] md:h-screen w-screen xs:pt-10 md:pt-0'>
       <div
         id='apresentation'
         className='flex flex-col xs:w-full xs:h-[30vh] md:w-[50vw] md:h-full items-center justify-start overflow-x-hidden'
       >
-        <div className='flex flex-col md:justify-end md:w-full h-[40%] gap-8 xs:max-sm:mb-20'>
+        <div className='flex flex-col md:justify-end md:w-full h-[40%] gap-8 xs:max-sm:mb-14'>
           <div className='flex gap-12 md:ml-60 '>
             <button className='flex flex-col gap-2'
               onClick={() => changeLanguage('pt')}
@@ -83,21 +83,20 @@ function HomeHero() {
           </div>
         </div>
 
-        <div className='flex h-[60%] md:mt-16'>
+        <div className='flex xs:max-sm:relative xs:max-sm:left-3 h-[60%] md:mt-16 overflow-x-hidden'>
           <p className='text-slate-50 xs:text-left xs:text-2xl md:text-4xl xs:w-[300px] md:w-[450px]'>{text}</p>
-          {/* Corrigido o onClick para chamar a função corretamente */}
           <AiOutlineSound
             color='#FFFF'
             size={30}
-            className='-rotate-45 cursor-pointer'
-            onClick={handleAudio} // Aqui a função é chamada corretamente
+            className='-rotate-45 cursor-pointer relative xs:max-sm:top-2'
+            onClick={handleAudio}
           />
         </div>
       </div>
 
       <div
         id="earthAventure"
-        className="flex xs:w-full xs:h-[50vh] md:w-[50vw] md:h-full items-center justify-center relative"
+        className="flex xs:w-full xs:h-[50vh] md:w-[50vw] md:h-full items-center justify-center relative xs:max-sm:mt-12"
       >
         <EarthAventure />
         <div
