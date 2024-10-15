@@ -14,6 +14,9 @@ module.exports = {
       'lg': '1440px',
     },
     extend: {
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+      },
       colors: {
         'custom-rgb': 'rgb(14, 231, 183)',
         'custom-rgb-ligthBlue': 'rgb(122, 199, 227)'
