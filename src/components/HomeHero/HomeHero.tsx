@@ -48,9 +48,13 @@ function HomeHero() {
 
   const handleAudio = () => {
     AudioAmong.currentTime = 0;
-    AudioAmong.play()
+    AudioAmong.play();
   };
 
+  const handleLanguageChange = (event: React.MouseEvent, lng: string) => {
+    event.preventDefault();
+    changeLanguage(lng);
+  };
 
   return (
     <div className='flex xs:flex-col md:flex-row xs:h-[100vh] md:h-screen w-screen xs:pt-10 md:pt-0'>
@@ -61,23 +65,23 @@ function HomeHero() {
         <div className='flex flex-col md:justify-end md:w-full h-[40%] gap-8 xs:max-sm:mb-14'>
           <div className='flex gap-12 md:ml-60 '>
             <button className='flex flex-col gap-2'
-              onClick={() => changeLanguage('pt')}
+              onClick={(event) => handleLanguageChange(event, 'pt')}
             >
               <img src={br} width={30} alt='Pt-Br' />
               <span className='text-slate-50 font-mono'>Pt-Br</span>
             </button>
 
             <button className='flex flex-col gap-2'
-              onClick={() => changeLanguage('en')}
+              onClick={(event) => handleLanguageChange(event, 'en')}
             >
-              <img src={us} width={30} />
+              <img src={us} width={30} alt='En-Us' />
               <span className='text-slate-50 font-mono'>En-Us</span>
             </button>
 
             <button className='flex flex-col gap-2'
-              onClick={() => changeLanguage('es')}
+              onClick={(event) => handleLanguageChange(event, 'es')}
             >
-              <img src={es} width={30} />
+              <img src={es} width={30} alt='Es-Es' />
               <span className='text-slate-50 font-mono'>Es-Es</span>
             </button>
           </div>
