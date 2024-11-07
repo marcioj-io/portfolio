@@ -18,7 +18,6 @@ function Sobre() {
     const fullText = t('about.fullText');
     const shortText = t('about.shortText');
 
-    console.log(t('about.fullText'));
 
     const MemorizedImg = useMemo(() => (
         <div

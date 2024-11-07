@@ -10,5 +10,17 @@
         "seeMore": "See more",
         "close": "Close",
         "robotAltText": "Robot image"
+    },
+    "Xp": {
+        "years": "#03 Años",
+        "profissional": "de experiencia profesional"
+    },
+    "Projects": "#Proyectos",
+    "Skills": "#Habilidades",
+    "Contact": {
+        "text1": "#Necesitas",
+        "text2": "mis servicios?",
+        "text3": "Rellena el formulario abajo y",
+        "text4": "te responderé pronto"
     }
 }

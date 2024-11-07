@@ -10,11 +10,13 @@ import nextc from '../../assets/nextcooders.jpg';
 import koode from '../../assets/koode.jpg';
 import { FaFilePdf } from "react-icons/fa6";
 import { FaFileWord } from "react-icons/fa6";
+import { useTranslation } from 'react-i18next';
 
 function Xp() {
   const [lightPosition, setLightPosition] = useState({ x: 0, y: 0 });
   const [tilt, setTilt] = useState({ tiltX: 0, tiltY: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
 
   const isSmallScreen = useMediaQuery({ query: '(max-width: 640px)' });
 
@@ -107,12 +109,19 @@ function Xp() {
     link.click();
   };
 
+  const text1 = t('Xp.years')
+  const text2 = t('Xp.profissional')
+
   return (
     <div className="h-auto w-screen flex xs:flex-col xs:m-auto xs:items-center md:items-start md:justify-start md:pl-5 lg:pl-10 xs:max-sm:mt-12 md:mt-20">
       <div>
         <p className='text-[#c0c0c0] md:text-6xl relative xs:max-sm:right-14 md:px-5 md:pb-12 xs:py-5'>
-          <span className='font-bold font-sans xs:text-xl md:text-6xl'>#03 Years</span>
-          {<br />} <span className='text-[#8ac6d1] xs:text-xl md:text-5xl'>of professional experience</span>
+          <span className='font-bold font-sans xs:text-xl md:text-6xl'>
+            {text1}
+          </span>
+          {<br />} <span className='text-[#8ac6d1] xs:text-xl md:text-5xl'>
+            {text2}
+          </span>
         </p>
       </div>
 

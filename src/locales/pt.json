@@ -10,5 +10,17 @@
         "seeMore": "Ver mais",
         "close": "Fechar",
         "robotAltText": "Imagem do robô"
+    },
+    "Xp": {
+        "years": "#03 Anos",
+        "profissional": "de experiência profissional"
+    },
+    "Projects": "#Projetos",
+    "Skills": "#Habilidades",
+    "Contact": {
+        "text1": "#Precisa dos",
+        "text2": "meus serviços?",
+        "text3": "Preencha o formulário abaixo que",
+        "text4": "irei retornar em breve"
     }
 }
