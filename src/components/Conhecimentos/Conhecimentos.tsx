@@ -14,8 +14,10 @@ import { RiFolderUnknowFill } from "react-icons/ri";
 import './styles.css';
 import ConhecimentoItem from './ConhecimentoItem';
 import { useMediaQuery } from 'react-responsive';
+import { useTranslation } from 'react-i18next';
 
 function Conhecimentos() {
+  const { t } = useTranslation();
   const isSmallScreen = useMediaQuery({ query: '(max-width: 640px)' });
   // const isMediumScreen = useMediaQuery({ query: '(min-width: 641px) and (max-width: 768px)' });
   // const isLargeScreen = useMediaQuery({ query: '(min-width: 769px) and (max-width: 1024px)' });
@@ -24,7 +26,7 @@ function Conhecimentos() {
   return (
     <div className="flex flex-col h-auto w-screen bg-[#0e382a] gap-2 xs:py-4 xs:pb-12 ">
       <p className="text-[#c0c0c0] xs:text-xl md:text-6xl font-bold font-sans relative xs:pl-10 md:pl-16 py-6 md:py-20 gap-8 ">
-        <span>#Skills</span>
+        <span>{t('Skills')}</span>
       </p>
 
       <section className="flex flex-wrap justify-center gap-14 mt-8 px-3">

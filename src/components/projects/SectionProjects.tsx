@@ -1,5 +1,6 @@
 import React from 'react'
 import ProjectItem from './ProjectItem'
+import { useTranslation } from 'react-i18next'
 
 interface Iprojeto {
   slug: string
@@ -15,12 +16,13 @@ export interface ProjetosProps {
 }
 
 function SectionProjects({ projetos }: ProjetosProps) {
+  const { t } = useTranslation();
 
   return (
     <div className="flex flex-col w-screen lg:min-h-screen pt-10 lg:pt-20 h-auto bg-gradient-to-b from-[#0d1117] to-[#0e382a] ">
       <p className='text-[#c0c0c0] xs:text-xl md:text-6xl relative xs:pl-10 md:pl-16 xs:py-10 md:py-20'>
         <span className='font-bold font-sans'>
-          #Projects
+          {t('Projects')}
         </span>
       </p>
       <div className="flex flex-col items-center w-full h-auto pb-8">

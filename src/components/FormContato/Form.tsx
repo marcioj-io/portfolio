@@ -23,10 +23,8 @@ export const Form = () => {
   });
 
   const onSubmit = async (data: ContactFormData): Promise<void> => {
-    console.log('Submitting:', data);
     try {
-      const response = await POSTWebHook(data);
-      console.log('Response from webhook:', response);
+      await POSTWebHook(data);
       toast.success('Mensagem enviada com sucesso!');
       reset();
     } catch (error) {
