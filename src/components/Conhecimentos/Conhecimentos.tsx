@@ -18,10 +18,8 @@ import { useTranslation } from 'react-i18next';
 
 function Conhecimentos() {
   const { t } = useTranslation();
-  const isSmallScreen = useMediaQuery({ query: '(max-width: 640px)' });
-  // const isMediumScreen = useMediaQuery({ query: '(min-width: 641px) and (max-width: 768px)' });
-  // const isLargeScreen = useMediaQuery({ query: '(min-width: 769px) and (max-width: 1024px)' });
-  // const isExtraLargeScreen = useMediaQuery({ query: '(min-width: 1025px)' });
+  // const isSmallScreen = useMediaQuery({ query: '(max-width: 640px)' });
+  const isSmallScreen = useMediaQuery({ maxWidth: 1200 });
 
   return (
     <div className="flex flex-col h-auto w-screen bg-[#0e382a] gap-2 xs:py-4 xs:pb-12 ">

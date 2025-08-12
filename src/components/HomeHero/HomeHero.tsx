@@ -12,34 +12,37 @@ function HomeHero() {
   const { t } = useTranslation();
   const { changeLanguage } = useLanguage();
 
-  useEffect(() => {
-    const helloText = t('home.hello');
+useEffect(() => {
+  const helloText = t('home.hello');
+  let index = 0;
+  let timeoutId: NodeJS.Timeout;
 
-    let index = 0;
-    let timer: NodeJS.Timeout;
+  const animateText = () => {
+    setText(helloText.substring(0, index + 1) + '...');
+    index++;
 
-    const animateText = () => {
-      setText(`${helloText.substring(0, index + 1)}...`);
-      index++;
-      if (index === helloText.length) {
-        clearInterval(timer);
-        setTimeout(() => {
-          index = 0;
-          timer = setInterval(animateText, 90);
-        }, 1000);
-      }
-    };
+    if (index < helloText.length) {
+      timeoutId = setTimeout(animateText, 90);
+    } else {
+      // Quando terminar, espera 1s e reinicia a animação
+      timeoutId = setTimeout(() => {
+        index = 0;
+        animateText();
+      }, 1000);
+    }
+  };
 
-    timer = setInterval(animateText, 90);
+  animateText();
 
-    return () => {
-      clearInterval(timer);
-    };
-  }, [t]);
+  return () => {
+    clearTimeout(timeoutId);
+  };
+}, [t]);
+
 
   const shadowStyle: CSSProperties = {
-    position: 'absolute' as 'absolute',
-    transform: 'translate(-50%, -50%)',
+    // position: 'absolute' as 'absolute',
+    // transform: 'translate(-50%, -50%)',
     borderRadius: '50%',
     zIndex: -1,
   };
@@ -57,12 +60,12 @@ function HomeHero() {
   };
 
   return (
-    <div className='flex xs:flex-col md:flex-row xs:h-[100vh] md:h-screen w-screen xs:pt-10 md:pt-0'>
+    <div className='xs:grid xs:grid-cols-1 w-screen mt-24 xs:h-[100vh] md:h-screen md:pt-0 lg:grid lg:grid-cols-5 '>
       <div
         id='apresentation'
-        className='flex flex-col xs:w-full xs:h-[30vh] md:w-[50vw] md:h-full items-center justify-start overflow-x-hidden'
+        className='xs:flex xs:flex-col xs:items-center xs:justify-between xs:w-screen xs:h-[25vh] sm:h-[20vh] md:w-screen xs:gap-2 sm:gap-20 lg:grid lg:col-span-2 lg:ml-24 lg:mt-28 '
       >
-        <div className='flex flex-col md:justify-end md:w-full h-[40%] gap-8 xs:max-sm:mb-14'>
+        <div className='md:mr-56 lg:relative lg:right-24'>
           <div className='flex gap-12 md:ml-60 '>
             <button className='flex flex-col gap-2'
               onClick={(event) => handleLanguageChange(event, 'pt')}
@@ -87,8 +90,11 @@ function HomeHero() {
           </div>
         </div>
 
-        <div className='flex xs:max-sm:relative xs:max-sm:left-3 h-[60%] md:mt-16 overflow-x-hidden'>
-          <p className='text-slate-50 xs:text-left xs:text-2xl md:text-4xl xs:w-[300px] md:w-[450px]'>{text}</p>
+
+        <div className='flex items-start xs:min-h-16 sm:min-h-32 xs:w-[300px] sm:w-[500px] md:w-full'>
+          <p className='text-slate-50 xs:text-left xs:text-xl sm:text-4xl xs:w-[300px] sm:w-[450px]'>
+            {text} 
+          </p>
           <AiOutlineSound
             color='#FFFF'
             size={30}
@@ -100,12 +106,12 @@ function HomeHero() {
 
       <div
         id="earthAventure"
-        className="flex xs:w-full xs:h-[50vh] md:w-[50vw] md:h-full items-center justify-center relative xs:max-sm:mt-12"
+        className="flex items-center justify-center lg:col-span-3 lg:relative lg:bottom-20 lg:left-16"
       >
         <EarthAventure />
         <div
-          className="absolute xs:w-[150px] xs:h-[150px] md:w-[300px] md:h-[300px] xs:left-[50%] xs:top-[50%] md:left-[50%] md:top-[50%]
-            xs:shadow-[0_0_150px_90px_rgba(30,58,138,0.8)] lg:shadow-[0_0_500px_150px_rgba(30,58,138,1.5)]"
+          className="absolute xs:w-[150px] xs:h-[150px] md:w-[300px] md:h-[300px]
+            xs:shadow-[0_0_150px_150px_rgba(30,58,138,0.8)] lg:shadow-[0_0_500px_150px_rgba(30,58,138,1.5)]"
           style={shadowStyle}
         ></div>
       </div>

@@ -68,32 +68,33 @@ function Xp() {
     cursor: `url(${ZoomIcon}) ${cursorOffsetX} ${cursorOffsetY}, auto`,
   };
 
-  const Xp: ExperienciaProps[] = [
-    {
-      icon: verzel,
-      title: 'Full-Stack Developer',
-      empresa: 'Verzel Soluções em Sistemas',
-      time: 'Set de 2023 - Set 2024',
-      local: 'São Paulo, Brasil - Remota',
-      description: 'Skills: Web technologies - React Native - Azure DevOps - Node.js - #react.ts - Microsoft Azure - C# - .NET Core - EntityFramework -Linq - Sql Server - Postgress - PrismaOrm - Docker - Nodemailer - Mailkit etc..'
-    },
-    {
-      icon: nextc,
-      title: 'Full-Stack Developer',
-      empresa: 'NextCooders',
-      time: 'Set de 2022 - Setember 2023',
-      local: 'São Paulo, Brasil - Remote',
-      description: 'Skills: Web technologies - Azure DevOps - Node.js - #react.ts - Microsoft Azure - .NET Core - EntityFramework - Linq'
-    },
-    {
-      icon: koode,
-      title: 'Full-Stack Developer',
-      empresa: 'Koode',
-      time: 'Feb de 2022 - Setember 2022',
-      local: 'São Paulo, Brasil - Remote',
-      description: 'Skills: Web technologies - Azure DevOps - Node.js - #react.ts - Microsoft Azure - .NET Core - AspNet'
-    },
-  ]
+const Xp: ExperienciaProps[] = [
+  {
+    icon: nextc, // você precisa importar o ícone correspondente
+    title: 'Full Stack Developer',
+    empresa: 'Bebot',
+    time: 'Jan de 2024 - Ago de 2025',
+    local: 'São Paulo, Brasil - Remoto', // supondo, ajuste se precisar
+    description: `Node.js, .NET, AWS: [EC2, RDS, S3], Cloudflare, React, JavaScript, Docker, SQL Server.`
+  },
+  {
+    icon: nextc, // importe o ícone adequado
+    title: 'Full Stack Developer',
+    empresa: 'Prodata',
+    time: 'Jan de 2024 - Mai de 2025',
+    local: 'São Paulo, Brasil - Remoto', // ajustar conforme necessidade
+    description: `.NET Framework, ASP.NET Core, SQL Server, Redis, MongoDB, Docker.`
+  },
+  {
+    icon: verzel,
+    title: 'Full Stack Developer',
+    empresa: 'Verzel Soluções em Sistemas',
+    time: 'Fev de 2022 - Dez de 2023',
+    local: 'São Paulo, Brasil - Remoto',
+    description: `.NET, Node.js, TypeScript, React, Redux, React Hooks, Material UI, Zod, Jest, Docker, Mailer, SQL Server.`
+  },
+];
+
 
   const downloadPDF = () => {
     const link = document.createElement('a');
@@ -102,52 +103,52 @@ function Xp() {
     link.click();
   };
 
-  const downloadWord = () => {
-    const link = document.createElement('a');
-    link.href = '/assets/cv.docx';
-    link.download = 'CV-MJ-Full-Stack.docx';
-    link.click();
-  };
+  // const downloadWord = () => {
+  //   const link = document.createElement('a');
+  //   link.href = '/assets/cv.docx';
+  //   link.download = 'CV-MJ-Full-Stack.docx';
+  //   link.click();
+  // };
 
   const text1 = t('Xp.years')
   const text2 = t('Xp.profissional')
 
   return (
-    <div className="h-auto w-screen flex xs:flex-col xs:m-auto xs:items-center md:items-start md:justify-start md:pl-5 lg:pl-10 xs:max-sm:mt-12 md:mt-20">
-      <div>
-        <p className='text-[#c0c0c0] md:text-6xl relative xs:max-sm:right-14 md:px-5 md:pb-12 xs:py-5'>
-          <span className='font-bold font-sans xs:text-xl md:text-6xl'>
-            {text1}
-          </span>
-          {<br />} <span className='text-[#8ac6d1] xs:text-xl md:text-5xl'>
-            {text2}
-          </span>
-        </p>
-      </div>
+    <div className="h-full w-full xs:pl-2 sm:pl-9">
+      <div className='xs:grid xs:grid-cols-1 sm:grid-cols-2 w-[95%] md:flex-col my-6'>
+          <p className='text-[#c0c0c0] xs:max-sm:right-14 xs:py-5 md:text-6xl md:px-5 md:pb-12 '>
+            <span className='font-bold font-sans xs:text-xl md:text-6xl'>
+              {text1}
+            </span>
+            {<br />} <span className='text-[#8ac6d1] xs:text-xl md:text-5xl'>
+              {text2}
+            </span>
+          </p>
 
-      <div className='relative flex xs:mt-11 xs:gap-7 md:gap-14'>
-        <span className='relative xs:max-sm:left-9 md:left-[45vw] text-slate-50 font-inter font-light top-1'>Donwload Cv here: </span>
-        <FaFilePdf
-          color='#1c916c'
-          size={30}
-          className='relative xs:left-9 md:left-[45vw] mb-5 cursor-pointer'
-          onClick={downloadPDF}
-          title="Baixar PDF"
-        />
+        <div className='flex xs:items-end xs:relative xs:left-28'>
+          <span className='text-slate-50 font-inter font-light xs:pr-7'>Donwload Cv here: </span>
+          <FaFilePdf
+            color='#1c916c'
+            size={30}
+            className='cursor-pointer'
+            onClick={downloadPDF}
+            title="Baixar PDF"
+          />
 
-        <FaFileWord
-          color='#8ac6d1'
-          size={30}
-          className='relative xs:left-9 md:left-[45vw] mb-5 cursor-pointer'
-          onClick={downloadWord}
-          title="Baixar Word"
-        />
+          {/* <FaFileWord
+            color='#8ac6d1'
+            size={30}
+            className='relative xs:left-9 md:left-[45vw] mb-5 cursor-pointer'
+            onClick={downloadWord}
+            title="Baixar Word"
+          /> */}
+        </div>
       </div>
 
       <div className='flex xs:max-sm:flex-col md:flex-row'>
         <div
           id="costum"
-          className="bg-[#161b22] flex xs:justify-center md:items-center md:justify-start xs:max-h-[500px] xs:w-[90vw] md:w-[70vw] md:min-h-[80vh] lg:w-[75vw] rounded-lg overflow-hidden z-10 xs:pb-2 sm:pb-0 md:py-6"
+          className="bg-[#161b22] flex rounded-lg overflow-hidden z-10 xs:justify-center xs:w-[90vw] md:items-center md:justify-start md:w-[70vw] lg:w-[75vw] md:min-h-[80vh]  "
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           ref={containerRef}
@@ -160,7 +161,7 @@ function Xp() {
           </div>
         </div>
         <div className=''>
-          <Sobre />
+          {/* <Sobre /> */}
         </div>
       </div>
     </div>
