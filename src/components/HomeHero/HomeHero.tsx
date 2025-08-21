@@ -106,12 +106,12 @@ useEffect(() => {
 
       <div
         id="earthAventure"
-        className="flex items-center justify-center lg:col-span-3 lg:relative lg:bottom-20 lg:left-16"
+        className="flex items-center justify-center lg:col-span-3 lg:relative lg:bottom-20 lg:left-16 "
       >
         <EarthAventure />
         <div
           className="absolute xs:w-[150px] xs:h-[150px] md:w-[300px] md:h-[300px]
-            xs:shadow-[0_0_150px_150px_rgba(30,58,138,0.8)] lg:shadow-[0_0_500px_150px_rgba(30,58,138,1.5)]"
+            xs:shadow-[0_0_70px_50px_rgba(30,58,138,0.8)] lg:shadow-[0_0_500px_150px_rgba(30,58,138,1.5)] overflow-x-hidden"
           style={shadowStyle}
         ></div>
       </div>

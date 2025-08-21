@@ -17,7 +17,7 @@ interface LanguageProviderProps {
 // Criando o provider para gerenciar o idioma
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
     const { i18n } = useTranslation();
-    const [language, setLanguage] = useState<string>('en' || i18n.language);
+    const [language, setLanguage] = useState<string>(i18n.language || 'en');
 
     // useCallback para evitar recriação da função de mudança de idioma
     const changeLanguage = useCallback((lng: string) => {

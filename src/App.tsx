@@ -79,7 +79,7 @@ function App() {
   }, []);
 
   return (
-    <div className='flex flex-col w-screen h-screen'>
+    <div className='flex flex-col w-screen h-screen overflow-hidden'>
       <section>
         <HomeHero />
       </section>
